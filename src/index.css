@@ -15,7 +15,7 @@ code {
   -webkit-text-size-adjust: none; 
 } */
 
-/* @font-face {
-  font-family: 'Jua';
-  src: url('./asset/fonts/Jua-Regular.ttf');
-} */
+@font-face {
+  font-family: '나눔손글씨 가람연꽃';
+  src: url('./asset/fonts/나눔손글씨 가람연꽃.ttf');
+}

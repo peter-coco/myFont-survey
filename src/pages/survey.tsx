@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import Loading from '../components/loading';
 import SurveyForm from '../components/surveyForm';
 import { setResultOnSurvey } from '../utils/setResultOnSurvey';
-import * as bgImage from '../asset/images/index';
 import { firebaseDB } from '../config/firebase';
 import * as Styles from '../components/surveyForm/index.style';
 import ReactAudioPlayer from 'react-audio-player';
 import { setSurveyContents } from '../utils/setSurveyContents';
+import Paper from '../components/paper';
 
 const SurveyWrap = styled.div`
   width: 100%;
@@ -24,11 +24,12 @@ const Survey = () => {
   const [surveyNo, setSurveyNo] = useState(1);
   const [characterPoint, setCharacterPoint] = useState(0);
 
-  const backgroundImage: string = '/images/survey_bg11.png';
+  const [descriptionImage, setDescriptionImage] = useState('');
   const [description, setDescription] = useState('');
-  const [descriptionImage, setDescriptionImage] = useState('/images/survey_logo1.jpeg');
-  const [topOptionText, setTopOptionText] = useState('');
-  const [bottomOptionText, setBottomOptionText] = useState('');
+  const [topOptionFont, setTopOptionFont] = useState('');
+  const [bottomOptionFont, setBottomOptionFont] = useState('');
+  const [titleBgColor, setTitleBgColor] = useState('');
+  const [bottomImg, setBottomImg] = useState('');
 
   const handleNextSurvey = useCallback(() => {
     if (surveyNo < 17) {
@@ -48,17 +49,8 @@ const Survey = () => {
     handleNextSurvey();
   }, [handleNextSurvey]);
 
-  const handleSurveyInforByNo = (
-    descriptionValue: string,
-    descriptionImageUrl: string,
-    topOptionValue: string,
-    botOptionValue: string
-  ) => {
-    setDescription(descriptionValue);
-    setDescriptionImage(descriptionImageUrl);
-    setTopOptionText(topOptionValue);
-    setBottomOptionText(botOptionValue);
-  };
+  const handleSurveyInforByNo = (topOptionValue: string, botOptionValue: string) => {};
+
   const handleAddResultToDatabase = useCallback(async () => {
     setTimerButton(false);
     const resultType = setResultOnSurvey(characterPoint);
@@ -70,55 +62,92 @@ const Survey = () => {
       .get()
       .then(async (item) => {
         const items = item.data();
-        if (resultType === 'raccon') {
+        if (resultType === 'font_type_1') {
           // console.log(resultType, items?.raccon, items?.total);
-          await bucket.doc('type').update({ raccon: items?.raccon + 1 });
+          await bucket.doc('type').update({ font_type_1: items?.font_type_1 + 1 });
           await bucket.doc('type').update({ total: items?.total + 1 });
           window.location.href = `/result/${resultType}`;
-        } else if (resultType === 'fox') {
-          await bucket.doc('type').update({ fox: items?.fox + 1 });
+        } else if (resultType === 'font_type_2') {
+          await bucket.doc('type').update({ font_type_2: items?.font_type_2 + 1 });
           await bucket.doc('type').update({ total: items?.total + 1 });
           window.location.href = `/result/${resultType}`;
-        } else if (resultType === 'dog') {
-          await bucket.doc('type').update({ dog: items?.dog + 1 });
+        } else if (resultType === 'font_type_3') {
+          await bucket.doc('type').update({ font_type_3: items?.font_type_3 + 1 });
           await bucket.doc('type').update({ total: items?.total + 1 });
           window.location.href = `/result/${resultType}`;
-        } else if (resultType === 'bear') {
-          await bucket.doc('type').update({ bear: items?.bear + 1 });
+        } else if (resultType === 'font_type_4') {
+          await bucket.doc('type').update({ font_type_4: items?.font_type_4 + 1 });
           await bucket.doc('type').update({ total: items?.total + 1 });
           window.location.href = `/result/${resultType}`;
-        } else if (resultType === 'cow') {
-          await bucket.doc('type').update({ cow: items?.cow + 1 });
+        } else if (resultType === 'font_type_5') {
+          await bucket.doc('type').update({ font_type_5: items?.font_type_5 + 1 });
           await bucket.doc('type').update({ total: items?.total + 1 });
           window.location.href = `/result/${resultType}`;
-        } else if (resultType === 'hamster') {
-          await bucket.doc('type').update({ hamster: items?.hamster + 1 });
+        } else if (resultType === 'font_type_6') {
+          await bucket.doc('type').update({ font_type_6: items?.font_type_6 + 1 });
           await bucket.doc('type').update({ total: items?.total + 1 });
           window.location.href = `/result/${resultType}`;
-        } else if (resultType === 'rabbit') {
-          await bucket.doc('type').update({ rabbit: items?.rabbit + 1 });
+        } else if (resultType === 'font_type_7') {
+          await bucket.doc('type').update({ font_type_7: items?.font_type_7 + 1 });
           await bucket.doc('type').update({ total: items?.total + 1 });
           window.location.href = `/result/${resultType}`;
-        } else if (resultType === 'cat') {
-          await bucket.doc('type').update({ cat: items?.cat + 1 });
+        } else if (resultType === 'font_type_8') {
+          await bucket.doc('type').update({ font_type_8: items?.font_type_8 + 1 });
+          await bucket.doc('type').update({ total: items?.total + 1 });
+          window.location.href = `/result/${resultType}`;
+        } else if (resultType === 'font_type_9') {
+          await bucket.doc('type').update({ font_type_9: items?.font_type_9 + 1 });
+          await bucket.doc('type').update({ total: items?.total + 1 });
+          window.location.href = `/result/${resultType}`;
+        } else if (resultType === 'font_type_10') {
+          await bucket.doc('type').update({ font_type_10: items?.font_type_10 + 1 });
+          await bucket.doc('type').update({ total: items?.total + 1 });
+          window.location.href = `/result/${resultType}`;
+        } else if (resultType === 'font_type_11') {
+          await bucket.doc('type').update({ font_type_11: items?.font_type_11 + 1 });
+          await bucket.doc('type').update({ total: items?.total + 1 });
+          window.location.href = `/result/${resultType}`;
+        } else if (resultType === 'font_type_12') {
+          await bucket.doc('type').update({ font_type_12: items?.font_type_12 + 1 });
+          await bucket.doc('type').update({ total: items?.total + 1 });
+          window.location.href = `/result/${resultType}`;
+        } else if (resultType === 'font_type_13') {
+          await bucket.doc('type').update({ font_type_13: items?.font_type_13 + 1 });
+          await bucket.doc('type').update({ total: items?.total + 1 });
+          window.location.href = `/result/${resultType}`;
+        } else if (resultType === 'font_type_14') {
+          await bucket.doc('type').update({ font_type_14: items?.font_type_14 + 1 });
+          await bucket.doc('type').update({ total: items?.total + 1 });
+          window.location.href = `/result/${resultType}`;
+        } else if (resultType === 'font_type_15') {
+          await bucket.doc('type').update({ font_type_15: items?.font_type_15 + 1 });
           await bucket.doc('type').update({ total: items?.total + 1 });
           window.location.href = `/result/${resultType}`;
         } else {
-          await bucket.doc('type').update({ hedgehog: items?.hedgehog + 1 });
+          await bucket.doc('type').update({ font_type_16: items?.font_type_16 + 1 });
           await bucket.doc('type').update({ total: items?.total + 1 });
           window.location.href = `/result/${resultType}`;
         }
       });
-
-    // window.location.href = `/result/${resultType}`;
   }, [characterPoint]);
 
-  // console.log(topOptionText);
+  // console.log(topOptionFont);
   useEffect(() => {
-    const [description, descriptionImage, topOptionText, bottomOptionText] =
-      setSurveyContents(surveyNo);
+    const [
+      description,
+      topOptionImage,
+      bottomOptionImage,
+      descriptionImage,
+      titleBgColor,
+      bottomImg,
+    ] = setSurveyContents(surveyNo);
 
-    handleSurveyInforByNo(description, descriptionImage, topOptionText, bottomOptionText);
+    setTopOptionFont(topOptionImage);
+    setBottomOptionFont(bottomOptionImage);
+    setDescription(description);
+    setDescriptionImage(descriptionImage);
+    setTitleBgColor(titleBgColor);
+    setBottomImg(bottomImg);
   }, [surveyNo]);
 
   useEffect(() => {
@@ -142,27 +171,26 @@ const Survey = () => {
       {loadingStateToResult ? (
         <Loading />
       ) : (
-        // <SurveyForm
-        //   backgroundImage={backgroundImage}
-        //   description={description}
-        //   descriptionImageUrl={descriptionImage}
-        //   topOptionText={topOptionText}
-        //   bottomOptionText={bottomOptionText}
-        //   handleTopOption={handleTopOption}
-        //   handleBottomOption={handleBottomOption}
-        // />
-        <Styles.SurveyFormWrap backgroundImage={backgroundImage}>
-          <ReactAudioPlayer src={soundTrack} autoPlay controls={false} loop={true} volume={0.05} />
+        <Styles.SurveyFormWrap>
+          <Paper />
+          {/* <ReactAudioPlayer src={soundTrack} autoPlay controls={false} loop={true} volume={0.05} /> */}
           <Styles.Top>
             <Styles.SurveyDescriptionImage src={descriptionImage} />
+            <Styles.SurveyDescription bgColor={titleBgColor}>
+              {description}
+            </Styles.SurveyDescription>
+            <Styles.SurveyDescriptionImage src={descriptionImage} mirror={true} />
           </Styles.Top>
-          <Styles.SurveyDescription>{description}</Styles.SurveyDescription>
           <Styles.SurveyOptionWrap>
-            <Styles.SurveyOption onClick={handleTopOption}>{topOptionText}</Styles.SurveyOption>
-            <Styles.SurveyOption onClick={handleBottomOption}>
-              {bottomOptionText}
-            </Styles.SurveyOption>
+            <Styles.SurveyOption src={topOptionFont} onClick={handleTopOption} />
+            <Styles.SurveyOption src={bottomOptionFont} onClick={handleBottomOption} />
           </Styles.SurveyOptionWrap>
+          <Styles.Bottom>
+            <Styles.BottomDescription>
+              좋아하는 글씨체는 내가 닮고 싶은 성격을 <br />
+              나와 닮은 글씨체는 내 성격을 나타냅니다.
+            </Styles.BottomDescription>
+          </Styles.Bottom>
         </Styles.SurveyFormWrap>
       )}
     </SurveyWrap>

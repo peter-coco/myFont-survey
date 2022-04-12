@@ -2,75 +2,66 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { firebaseDB } from '../config/firebase';
 import { Link } from 'react-router-dom';
+import Paper from '../components/paper';
+import PostIt from '../components/postit';
 
 const HomeWrap = styled.div`
   width: 100%;
-  max-width: 600px;
+  max-width: 500px;
   height: 100vh;
+  position: relative;
+`;
+
+const ContentsWrap = styled.div`
+  width: 100%;
+  height: 100%;
+  position: absolute;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  top: 0px;
+  z-index: 1px;
+  gap: 50px;
   align-items: center;
   justify-content: center;
-  /* background-image: url('/images/main.png'); */
-  /* background-repeat: no-repeat; */
-  /* background-size: cover; */
-  /* background-position: center; */
 `;
-const Description = styled.div`
-  font-weight: 400;
-  font-size: 24px;
+const Title = styled.div`
+  font-size: 40px;
   display: flex;
   align-items: center;
-  font-family: 'Jua';
+  font-family: '나눔손글씨 가람연꽃';
+  text-align: center;
 `;
 
-const Writer = styled.div`
-  font-size: 14px;
-  font-weight: 900;
+const TitleWrap = styled.div`
+  /* padding: 10px 50px; */
+  width: 100%;
+  min-height: 300px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+`;
 
-  color: #ffffff;
+const ShapesWrap = styled.div``;
+
+const Writer = styled.div`
+  font-size: 13px;
+  font-family: '나눔손글씨 가람연꽃';
 `;
 const ParticipantWrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: 'Jua';
+  font-family: '나눔손글씨 가람연꽃';
 `;
 const Participant = styled.div`
-  font-size: 20px;
-  font-weight: 400;
+  font-size: 18px;
 `;
-const Logo = styled.img`
-  width: 246px;
-  height: 280px;
-`;
-const Select = styled.div`
-  width: 220px;
-  height: 68px;
-  font-family: 'Jua';
-  background: #ffcaca;
-  border-radius: 30px;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 900;
-  font-size: 20px;
-  color: black;
-  cursor: pointer;
-  /* 
-  &:focus-within {
-    background-color: #84644c;
-  }
-  &:hover {
-    background-color: #84644c;
-  } */
-`;
 const Home = () => {
   const [participatorCount, setParticipatorCount] = useState(0);
-  const logo = '/images/main.jpeg';
+
   useEffect(() => {
     const bucket = firebaseDB.collection('result');
 
@@ -85,16 +76,27 @@ const Home = () => {
   }, []);
   return (
     <HomeWrap>
-      <Description>나는 어떤 타입의 동물일까?</Description>
-      <Logo src={logo} />
-      {/* <Writer>REPLACE</Writer> */}
-      <Link to="/introduce" style={{ textDecorationLine: 'none' }}>
-        <Select>테스트 시작!</Select>
-      </Link>
-      <ParticipantWrap>
-        <Participant>참여자 수</Participant>
-        <Participant>{participatorCount}</Participant>
-      </ParticipantWrap>
+      <Paper />
+      <ContentsWrap>
+        <TitleWrap>
+          <Title>
+            좋아하는
+            <br /> 글씨로
+            <br /> 알아보는
+            <br /> 성격 테스트
+          </Title>
+          <ShapesWrap></ShapesWrap>
+        </TitleWrap>
+        <Link to="/introduce" style={{ textDecorationLine: 'none' }}>
+          {/* <Select>시작하기</Select> */}
+          <PostIt description="시작하기" />
+        </Link>
+        <ParticipantWrap>
+          <Participant>참여자 수</Participant>
+          <Participant>{participatorCount}</Participant>
+        </ParticipantWrap>
+        <Writer>REPLACE</Writer>
+      </ContentsWrap>
     </HomeWrap>
   );
 };

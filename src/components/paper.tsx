@@ -15,7 +15,7 @@ const PaperWrap = styled.div`
 const Divider = styled.div`
   width: 100%;
   height: 0.2px;
-  background: #9d9a9a;
+  background: #e4e4e4;
 `;
 
 const Paper = () => {

@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Loading from '../components/loading';
-import SurveyForm from '../components/surveyForm';
 import { setResultOnSurvey } from '../utils/setResultOnSurvey';
 import { firebaseDB } from '../config/firebase';
 import * as Styles from '../components/surveyForm/index.style';
@@ -13,6 +12,7 @@ const SurveyWrap = styled.div`
   width: 100%;
   max-width: 400px;
   height: 100vh;
+  position: relative;
 `;
 
 const Survey = () => {
@@ -22,7 +22,7 @@ const Survey = () => {
   const [timer, setTimer] = useState(2);
   const [timerButton, setTimerButton] = useState(false);
   const [surveyNo, setSurveyNo] = useState(1);
-  const [characterPoint, setCharacterPoint] = useState(0);
+  const [winner, setWinner] = useState('');
 
   const [descriptionImage, setDescriptionImage] = useState('');
   const [description, setDescription] = useState('');
@@ -30,30 +30,40 @@ const Survey = () => {
   const [bottomOptionFont, setBottomOptionFont] = useState('');
   const [titleBgColor, setTitleBgColor] = useState('');
   const [bottomImg, setBottomImg] = useState('');
+  const [winnerOnBattle, setWinnerOnBattle] = useState<string[]>([]);
 
-  const handleNextSurvey = useCallback(() => {
-    if (surveyNo < 17) {
-      setSurveyNo((pre) => pre + 1);
-      return;
-    }
-    setTimerButton(true);
-    setLoadingStateToResult(true);
-  }, [surveyNo]);
+  const handleNextSurvey = useCallback(
+    (winner: string) => {
+      if (surveyNo < 15) {
+        setSurveyNo((pre) => pre + 1);
+        return;
+      }
+
+      let splitPath = winner.split('/');
+      let fileName = splitPath[splitPath.length - 1];
+      let splitedFileName = fileName.split('.');
+
+      setWinner(splitedFileName[0]);
+      setTimerButton(true);
+      setLoadingStateToResult(true);
+    },
+    [surveyNo]
+  );
 
   const handleTopOption = useCallback(() => {
-    setCharacterPoint((pre) => pre + 1);
-    handleNextSurvey();
-  }, [handleNextSurvey]);
-  const handleBottomOption = useCallback(() => {
-    setCharacterPoint((pre) => pre - 1);
-    handleNextSurvey();
-  }, [handleNextSurvey]);
+    setWinnerOnBattle([...winnerOnBattle, topOptionFont]);
 
-  const handleSurveyInforByNo = (topOptionValue: string, botOptionValue: string) => {};
+    handleNextSurvey(topOptionFont);
+  }, [handleNextSurvey, topOptionFont, winnerOnBattle]);
+  const handleBottomOption = useCallback(() => {
+    setWinnerOnBattle([...winnerOnBattle, bottomOptionFont]);
+
+    handleNextSurvey(bottomOptionFont);
+  }, [bottomOptionFont, handleNextSurvey, winnerOnBattle]);
 
   const handleAddResultToDatabase = useCallback(async () => {
     setTimerButton(false);
-    const resultType = setResultOnSurvey(characterPoint);
+    const resultType = winner;
 
     const bucket = firebaseDB.collection('result');
 
@@ -129,7 +139,7 @@ const Survey = () => {
           window.location.href = `/result/${resultType}`;
         }
       });
-  }, [characterPoint]);
+  }, [winner]);
 
   // console.log(topOptionFont);
   useEffect(() => {
@@ -140,7 +150,7 @@ const Survey = () => {
       descriptionImage,
       titleBgColor,
       bottomImg,
-    ] = setSurveyContents(surveyNo);
+    ] = setSurveyContents(surveyNo, winnerOnBattle);
 
     setTopOptionFont(topOptionImage);
     setBottomOptionFont(bottomOptionImage);
@@ -164,15 +174,15 @@ const Survey = () => {
       }, 1000);
       return () => clearInterval(countdown);
     }
-  }, [timerButton, timer, characterPoint]);
+  }, [timerButton, timer]);
 
   return (
     <SurveyWrap>
+      <Paper />
       {loadingStateToResult ? (
         <Loading />
       ) : (
         <Styles.SurveyFormWrap>
-          <Paper />
           {/* <ReactAudioPlayer src={soundTrack} autoPlay controls={false} loop={true} volume={0.05} /> */}
           <Styles.Top>
             <Styles.SurveyDescriptionImage src={descriptionImage} />
@@ -190,6 +200,7 @@ const Survey = () => {
               좋아하는 글씨체는 내가 닮고 싶은 성격을 <br />
               나와 닮은 글씨체는 내 성격을 나타냅니다.
             </Styles.BottomDescription>
+            <Styles.BottomImage src={bottomImg} />
           </Styles.Bottom>
         </Styles.SurveyFormWrap>
       )}

@@ -1,30 +1,28 @@
 import { ResultContent } from '../types/resultContet';
 export const setResultContents = (type: string): ResultContent => {
   switch (type) {
-    case 'raccon':
+    case 'font_type_1':
       return {
         mainColor: '#AFBC8F',
         logoImage: '/images/result_raccon.jpeg',
-        animalTitle: (
-          <div>
-            <span>호기심 많은 연구자</span>
-            <br />
-            말랑말랑 너부리
-          </div>
-        ),
+        animalTitle: <div>당신은 ‘활발한 합리주의자' 입니다.</div>,
         animalSubTitle: '세상에는 흥미로운게 너무 많아!',
         animalDescription: (
           <div>
-            <div>• 특이하다는 말을 많이 들어요.</div>
-            <div>• 궁금한 게 생기면 행동하고 봐요.</div>
-            <div>• 누가 나를 좋아하든 말든 크게 관심이 없어요.</div>
-            <div>• 하고 싶은 일은 꼭 해야 해요.</div>
-            <div>• 밖에 나가서 돌아다니는 걸 좋아해요.</div>
-            <div>• 관심사가 많아요.</div>
-            <div>• 그래서 누구든 말할 거리가 넘쳐요.</div>
-            <div>• 새로운 사람을 만나는 것에 거부감이 없어요.</div>
-            <div>• 가끔 백치미를 보일 때가 있어요.</div>
-            <div>• 친구에게 현실적인 해결책을 제시해요.</div>
+            <div>• 인지력이 뛰어나고 감정조절을 잘해서 어디서든 적응을 잘해요.</div>
+            <div>• 노력하는 걸 중요하게 생각해요.</div>
+            <div>• 다른 사람보다 높은 기억력을 가지고 있어요.</div>
+            <div>• 합리적인걸 좋아하는 지적인 사람이예요.</div>
+            <div>• 그만큼 속을 알 수 없고 다소 냉담한 면을 보이기도 해요.</div>
+            <div>• 모남없이 올곧아서 규율과 도덕을 중요하게 생각해요.</div>
+            <div>• 조금 신경질 적이예요.</div>
+            <div>• 자립심이 강해요.</div>
+            <div>• 주변 사람과 잘 어울려요.</div>
+            <div>• 인심이 후해요.</div>
+            <div>• 사람을 모으는 능력이 뛰어나고 체계적으로 운영할 수 있어요.</div>
+            <div>• 과묵하고 겸손해요.</div>
+            <div>• 주변에서 보기에 믿음직한 사람으로 보여요.</div>
+            <div>• 조금 조급한 면이 있어요.</div>
           </div>
         ),
         letterTitle: '💌      너부리가 보내는 편지      💌',
@@ -65,31 +63,39 @@ export const setResultContents = (type: string): ResultContent => {
           </div>
         ),
         dislikeLinkUrl: '/result/fox',
+        radarData: {
+          labels: ['신경성', '창의성', '외향성', '우호성', '성실성'],
+          datasets: [
+            {
+              data: [10, 20, 50, 70, 90],
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderColor: 'rgba(255, 99, 132, 1)',
+              borderWidth: 1,
+            },
+          ],
+        },
       };
-    case 'fox':
+    case 'font_type_2':
       return {
         mainColor: '#87504B',
         logoImage: '/images/result_fox.jpeg',
-        animalTitle: (
-          <div>
-            <span>여유로운 휴식가</span>
-            <br />
-            말랑말랑 여우리
-          </div>
-        ),
+        animalTitle: <div>당신은 ‘현실적인 즉흥주의자'입니다.</div>,
         animalSubTitle: '급할 필요 있어? 천천히 가자',
         animalDescription: (
           <div>
-            <div>• 차 한 잔 마시는 여유를 가지고 있어요.</div>
-            <div>• 어떤 일이든 조급하지 않고 차분하게 진행해요.</div>
-            <div>• 은근한 고집이 있어요.</div>
-            <div>• 굳이 새로운 사람을 사귀려고 하지 않아요.</div>
-            <div>• 그렇다고 흠 잡힐 행동을 하지도 않아요.</div>
-            <div>• 그래서 주변 사람과 두루두루 잘 지내요.</div>
-            <div>• 좋아하는 사람과 싫어하는 사람이 명확해요.</div>
-            <div>• 좋아하는 사람의 의견을 존중해줘요.</div>
-            <div>• 누구와 경쟁하는 걸 좋아하지 않아요.</div>
-            <div>• 나만의 페이스 유지를 중요하게 생각해요.</div>
+            <div>• 어디서든 적응을 잘해요.</div>
+            <div>• 현실적인 면이 있어요.</div>
+            <div>• 자신의 감정을 잘 표현하지 않아요.</div>
+            <div>• 타인에 대한 공감능력이 풍부해요.</div>
+            <div>• 잦은 충돌이나 스트레스를 피하려고 해요.</div>
+            <div>• 자제력이 뛰어나요.</div>
+            <div>• 조금 이기적인 면이 있어서 팀워크와 맞지는 않아요.</div>
+            <div>• 즉흥적으로 행동해요.</div>
+            <div>• 어디로 튈지 모르는 매력을 가지고 있어요.</div>
+            <div>• 그렇기 때문에 행동을 예측하기가 가장 어려워요.</div>
+            <div>• 예민해요.</div>
+            <div>• 동정심이 많아요.</div>
+            <div>• 자신의 영역을 잘 파악해요</div>
           </div>
         ),
         letterTitle: '💌      여우리가 보내는 편지      💌',
@@ -129,32 +135,39 @@ export const setResultContents = (type: string): ResultContent => {
           </div>
         ),
         dislikeLinkUrl: '/result/raccon',
+        radarData: {
+          labels: ['신경성', '창의성', '외향성', '우호성', '성실성'],
+          datasets: [
+            {
+              data: [60, 90, 70, 30, 10],
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderColor: 'rgba(255, 99, 132, 1)',
+              borderWidth: 1,
+            },
+          ],
+        },
       };
-    case 'dog':
+    case 'font_type_3':
       return {
         mainColor: '#FFA985',
 
         logoImage: '/images/result_dog.jpeg',
-        animalTitle: (
-          <div>
-            <span>만인의 에너자이저</span>
-            <br />
-            말랑말랑 멍무이
-          </div>
-        ),
+        animalTitle: <div>당신은 ‘보수적인 자유주의자' 입니다.</div>,
         animalSubTitle: '혼자있지 말고 나랑 같이 놀자!',
         animalDescription: (
           <div>
-            <div>• 주변 사람을 즐겁게 하는 밝은 에너지가 있어요.</div>
-            <div>• 사람과 함께 있으면서 에너지를 얻어요.</div>
-            <div>• 누구에게든 사랑받고 관심받는 걸 좋아해요.</div>
-            <div>• 타인의 선택을 존중해줘요.</div>
-            <div>• 내가 직접 무언가를 하겠다고 나서지는 않아요.</div>
-            <div>• 관심이 생기면 적극적으로 호감을 표현해요.</div>
-            <div>• 타인이 싫어하는 행동은 하지 않으려고 해요.</div>
-            <div>• 혼자 있을 때 쉽게 우울해져요.</div>
-            <div>• 조금 낯가림을 타지만 금방 친해져요.</div>
-            <div>• 상처를 잘 받으면서도 쉽게 사람을 믿어요.</div>
+            <div>• 사생활 보호를 중요하게 생각해요.</div>
+            <div>• 돈을 잘 절약해요.</div>
+            <div>• 목표지향적 성향을 가지고 있어서 단시간 안에 업무 수행이 가능해요.</div>
+            <div>• 내성적이고 예민해요.</div>
+            <div>• 독립적이고, 자유를 중시하는 경향이 있어요.</div>
+            <div>• 열정적이고 체계적이에요.</div>
+            <div>• 사람을 모으는 체계적으로 운영할 수 있어요.</div>
+            <div>• 새로운 환경에 스트레스를 받기도 하지만 적응을 잘해나가요.</div>
+            <div>• 원칙적인 면이 있어 다소 보수적인 성향을 가지고 있어요.</div>
+            <div>• 집중력이 뛰어나요.</div>
+            <div>• 생각의 여유가 있고 유머러스해요.</div>
+            <div>• 자신의 영역을 잘 파악해요</div>
           </div>
         ),
         letterTitle: '💌      멍무이가 보내는 편지      💌',
@@ -193,32 +206,41 @@ export const setResultContents = (type: string): ResultContent => {
           </div>
         ),
         dislikeLinkUrl: '/result/bear',
+        radarData: {
+          labels: ['신경성', '창의성', '외향성', '우호성', '성실성'],
+          datasets: [
+            {
+              data: [70, 20, 10, 30, 50],
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderColor: 'rgba(255, 99, 132, 1)',
+              borderWidth: 1,
+            },
+          ],
+        },
       };
-    case 'bear':
+    case 'font_type_4':
       return {
         mainColor: '#DF724B',
 
         logoImage: '/images/result_bear.jpeg',
-        animalTitle: (
-          <div>
-            <span>푸근한 대인배</span>
-            <br />
-            말랑말랑 곰쥬
-          </div>
-        ),
+        animalTitle: <div>당신은 ‘절제하는 탐구주의자'입니다.</div>,
         animalSubTitle: '괜찮아. 누구든 실수할 수 있어.',
         animalDescription: (
           <div>
-            <div>• 각자의 개성을 존중해요.</div>
-            <div>• 좋은 게 좋은거지라고 넘기는 경우가 많아요.</div>
-            <div>• 주변에 좋아하는 사람이 많아요.</div>
-            <div>• 어떤 의견이든 존중해주고 들어줘요.</div>
-            <div>• 자기 의견을 고집하지 않아요.</div>
-            <div>• 부탁을 거절하지 못해요.</div>
-            <div>• 쉽게 화내지 않아요.</div>
-            <div>• 급하게 행동하지 않고 느긋해요.</div>
-            <div>• 남을 편하게 해주는 매력이 있어요.</div>
-            <div>• 친구의 아픔을 잘 공감하고 위로해줘요.</div>
+            <div>• 독립적이라서 개인의 자유를 중요하게 생각해요.</div>
+            <div>• 자립심이 강해요.</div>
+            <div>• 감정 조절을 잘해요.</div>
+            <div>• 인지력이 좋아서 기억력이 매우 좋아요.</div>
+            <div>• 자제력이 있어요.</div>
+            <div>• 이기적인 면이 있어서 팀워크랑 잘 맞지 않을 수 있어요.</div>
+            <div>• 속내를 잘 드러내지 않아요.</div>
+            <div>• 후한 인심을 가지고 있어요.</div>
+            <div>• 집중력이 뛰어나요.</div>
+            <div>• 꼼꼼해요.</div>
+            <div>• 내성적인 면이 있어요.</div>
+            <div>• 새로운 환경에 잘 적응해요</div>
+            <div>• 성실해요.</div>
+            <div>• 자신의 영역을 잘 파악해요</div>
           </div>
         ),
         letterTitle: '💌      곰쥬가 보내는 편지      💌',
@@ -260,32 +282,42 @@ export const setResultContents = (type: string): ResultContent => {
           </div>
         ),
         dislikeLinkUrl: '/result/dog',
+        radarData: {
+          labels: ['신경성', '창의성', '외향성', '우호성', '성실성'],
+          datasets: [
+            {
+              data: [10, 60, 20, 40, 90],
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderColor: 'rgba(255, 99, 132, 1)',
+              borderWidth: 1,
+            },
+          ],
+        },
       };
-    case 'cow':
+    case 'font_type_5':
       return {
         mainColor: '#87CBC5',
 
         logoImage: '/images/result_cow.jpeg',
-        animalTitle: (
-          <div>
-            <span>차분한 평화주의자</span>
-            <br />
-            말랑말랑 소소
-          </div>
-        ),
+        animalTitle: <div>당신은 ‘융통적인 기회주의자' 입니다.</div>,
         animalSubTitle: '난 변치 않아.',
         animalDescription: (
           <div>
-            <div>• 사시사철 푸른 소나무 같은 면모가 있어요.</div>
-            <div>• 어떠한 분쟁도 짜증도 일으키지 않아요.</div>
-            <div>• 함부로 비난하고 판단하지 않아요.</div>
-            <div>• 타인을 욕하는 걸 아주 싫어해요.</div>
-            <div>• 그래서 남 욕은 절대 하지 않아요.</div>
-            <div>• 어떤 친구든 무한신뢰를 줘요.</div>
-            <div>• 우직하고 듬직해요.</div>
-            <div>• 가끔 답답할 때도 있어요. </div>
-            <div>• 과묵하고 조용해요.</div>
-            <div>• 친구가 속상해할 때 말없이 곁에 있어 줘요.</div>
+            <div>• 열정적으로 무언가를 해내려고 해요.</div>
+            <div>• 주변 상황에 예민하게 반응해요.</div>
+            <div>• 자제력이 뛰어나요.</div>
+            <div>• 이기적인 면이 있어요.</div>
+            <div>• 속내를 잘 드러내지 않아요. 그래서 팀워크가 맞지 않을 수 있어요.</div>
+            <div>• 필요할 때는 체계적으로 움직여요.</div>
+            <div>• 자립심이 강해서 혼자서 해내려는게 많아요.</div>
+            <div>• 인심이 후할 때는 한 없이 후해요.</div>
+            <div>• 차분하고 흔들림이 없어요.</div>
+            <div>• 자신에게는 혹독하지만 타인에게는 관대해요.</div>
+            <div>• 종종 자제력을 잃고 충동적으로 행동해요.</div>
+            <div>• 직관적인 것에 의존해요.</div>
+            <div>• 영리해요.</div>
+            <div>• 자신의 영역을 잘 파악해요.</div>
+            <div>• 자기중심 적이에요.</div>
           </div>
         ),
         letterTitle: '💌     소소가 보내는 편지      💌',
@@ -325,31 +357,40 @@ export const setResultContents = (type: string): ResultContent => {
           </div>
         ),
         dislikeLinkUrl: '/result/cat',
+        radarData: {
+          labels: ['신경성', '창의성', '외향성', '우호성', '성실성'],
+          datasets: [
+            {
+              data: [50, 50, 20, 80, 40],
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderColor: 'rgba(255, 99, 132, 1)',
+              borderWidth: 1,
+            },
+          ],
+        },
       };
-    case 'hamster':
+    case 'font_type_6':
       return {
         mainColor: '#FDAAC5',
         logoImage: '/images/result_hamster.jpeg',
-        animalTitle: (
-          <div>
-            <span>사랑스러운 협동가 </span>
-            <br />
-            말랑말랑 햄찌
-          </div>
-        ),
+        animalTitle: <div>당신은 ‘열정적인 이타주의자'입니다.</div>,
         animalSubTitle: '혼자있지 말고 나랑 같이 놀자!',
         animalDescription: (
           <div>
-            <div>• 원하는 목표를 위해 끊임없이 노력해요.</div>
-            <div>• 친구들에게 내가 하고 싶은걸 자주 말해요.</div>
-            <div>• 혼자서 하는 것보다는 같이 하는 걸 좋아해요.</div>
-            <div>• 낯가림을 타지만 친해지면 성격이 돌변해요.</div>
-            <div>• 가끔 놀라울 정도로 활발해요.</div>
-            <div>• 소심해지면 한없이 소심해져요.</div>
-            <div>• 생각을 정리할 수 있는 공간이 꼭 필요해요.</div>
-            <div>• 가끔 소식이 뚝 끊겼다가 나타나요.</div>
-            <div>• 소수의 친구와 친하게 지내요.</div>
-            <div>• 비밀이 많아요.</div>
+            <div>• 영리한 면이 있어요.</div>
+            <div>• 다혈질 적 성향이 있지만 드러내지 않아요.</div>
+            <div>• 나에게는 가혹하지만 타인에게는 관대해요.</div>
+            <div>• 열정적이예요.</div>
+            <div>• 예민해요.</div>
+            <div>• 사회성이 좋아요.</div>
+            <div>• 감정을 주체하기 어려워해요.</div>
+            <div>• 관계의 맺고끊음을 어려워해요.</div>
+            <div>• 판단력이나 자의식이 부족해요.</div>
+            <div>• 빠르게 정보를 습득하는 능력이 있어요.</div>
+            <div>• 즉흥적이어서 임기응변에 강해요.</div>
+            <div>• 자요로운 성향을 가지고 있어요</div>
+            <div>• 남에게 인정받는걸 중요하게 생각해요.</div>
+            <div>• 일보다는 인간을 중요시해요</div>
           </div>
         ),
         letterTitle: '💌         햄찌가 보내는 편지       💌',
@@ -389,32 +430,47 @@ export const setResultContents = (type: string): ResultContent => {
           </div>
         ),
         dislikeLinkUrl: '/result/rabbit',
+        radarData: {
+          labels: ['신경성', '창의성', '외향성', '우호성', '성실성'],
+          datasets: [
+            {
+              data: [40, 60, 70, 90, 10],
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderColor: 'rgba(255, 99, 132, 1)',
+              borderWidth: 1,
+            },
+          ],
+        },
       };
-    case 'rabbit':
+    case 'font_type_7':
       return {
         mainColor: '#DA9185',
 
         logoImage: '/images/result_rabbit.jpeg',
-        animalTitle: (
-          <div>
-            <span>개성강한 힙스터</span>
-            <br />
-            말랑말랑 토토
-          </div>
-        ),
+        animalTitle: <div>당신은 ‘정이많은 보수주의자'입니다.</div>,
         animalSubTitle: '철저한 자기관리는 필수지!',
         animalDescription: (
           <div>
-            <div>• 개성이 뚜렷해요.</div>
-            <div>• 좋아하는 것과 싫어하는 게 명확해요.</div>
-            <div>• 신경 쓰는 게 있어도 티를 내지 않아요.</div>
-            <div>• 좋아하는 친구한테 의지를 많이 해요.</div>
-            <div>• 고민을 말하지 않아요. 혼자서 생각해요.</div>
-            <div>• 같이 일할 때 협업을 중요하게 생각해요.</div>
-            <div>• 가끔 욱해요.</div>
-            <div>• 친구 기분을 많이 신경 쓰고 챙겨줘요.</div>
-            <div>• 바쁠 때는 일에만 집중하고 다른 건 신경 안 써요.</div>
-            <div>• 나만의 공간을 중요하게 생각해요.</div>
+            <div>• 여러 사람과 어울리는 것을 즐겨요.</div>
+            <div>• 외로운 것을 싫어해요.</div>
+            <div>• 자기만의 시간을 가지는 거 보다 같이 있는걸 즐겨요.</div>
+            <div>• 자기 중심적인 성향이 있어요.</div>
+            <div>• 창의적이고 예술적이에요.</div>
+            <div>• 다른사람과 충돌하기 싫어해요.</div>
+            <div>• 낙관적이에요</div>
+            <div>• 동료와 사이가 좋아요.</div>
+            <div>• 분위기 메이커에요.</div>
+            <div>• 유머러스해요</div>
+            <div>• 여유가 있어요</div>
+            <div>• 주의력이 높아요.</div>
+            <div>• 보수적이에요.</div>
+            <div>• 사회성이 좋아요.</div>
+            <div>• 감정 주체가 어려워요.</div>
+            <div>• 관계를 맺고 끊기 어려워해요.</div>
+            <div>• 자의식이 강해요.</div>
+            <div>• 욕심을 부리지 않아요.</div>
+            <div>• 자기 주장이 약해요.</div>
+            <div>• 부드러운 대화능력을 가지고 있어요.</div>
           </div>
         ),
         letterTitle: '💌     토토가 보내는 편지     💌',
@@ -456,32 +512,40 @@ export const setResultContents = (type: string): ResultContent => {
           </div>
         ),
         dislikeLinkUrl: '/result/hamster',
+        radarData: {
+          labels: ['신경성', '창의성', '외향성', '우호성', '성실성'],
+          datasets: [
+            {
+              data: [10, 20, 70, 90, 40],
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderColor: 'rgba(255, 99, 132, 1)',
+              borderWidth: 1,
+            },
+          ],
+        },
       };
-    case 'cat':
+    case 'font_type_8':
       return {
         mainColor: '#959595',
 
         logoImage: '/images/result_cat.jpeg',
-        animalTitle: (
-          <div>
-            <span>은근한 최강자 </span>
-            <br />
-            말랑말랑 냠미
-          </div>
-        ),
+        animalTitle: <div>당신은 ‘호의적인 자기주의자'입니다.</div>,
         animalSubTitle: '나를 귀찮게 하지마.',
         animalDescription: (
           <div>
-            <div>• 조용하지만 존재감이 있어요.</div>
-            <div>• 주변에 챙겨주는 사람이 많아요.</div>
-            <div>• 날카로운 직관력과 통찰력을 가지고 있어요.</div>
-            <div>• 친구의 선을 지켜줘요.</div>
-            <div>• 과한 친절을 부리지 않아요.</div>
-            <div>• 혼자 있는 시간을 즐겨요.</div>
-            <div>• 취미가 많아요.</div>
-            <div>• 가끔 불쑥 여행을 떠나곤 해요.</div>
-            <div>• 친구들에게 자주 안부 연락이 와요.</div>
-            <div>• 눈치가 빠르고 말을 잘해요.</div>
+            <div>• 여러사람과 어울리는 것을 즐겨요.</div>
+            <div>• 외로움 타는 걸 싫어해요.</div>
+            <div>• 자기만의 신념과 원칙이 있어요.</div>
+            <div>• 자기중심적 성향이 있어요.</div>
+            <div>• 다른 사람과의 충돌을 싫어해요.</div>
+            <div>• 감정조절을 잘해요.</div>
+            <div>• 인지력이 뛰어나 기억력이 좋아요.</div>
+            <div>• 포커페이스를 잘해요.</div>
+            <div>• 엄격하고 고지식한 면이 있어요.</div>
+            <div>• 과시욕이 있어요.</div>
+            <div>• 관대한 면이 있어요.</div>
+            <div>• 열정적이에요.</div>
+            <div>• 완전 외향적이지도 내향적이지도 않아요.</div>
           </div>
         ),
         letterTitle: '💌     냠미가 보내는 편지     💌',
@@ -524,32 +588,42 @@ export const setResultContents = (type: string): ResultContent => {
           </div>
         ),
         dislikeLinkUrl: '/result/hedgehog',
+        radarData: {
+          labels: ['신경성', '창의성', '외향성', '우호성', '성실성'],
+          datasets: [
+            {
+              data: [80, 10, 40, 90, 20],
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderColor: 'rgba(255, 99, 132, 1)',
+              borderWidth: 1,
+            },
+          ],
+        },
       };
-    case 'hedgehog':
+    case 'font_type_9':
       return {
         mainColor: '#8E7C52',
 
         logoImage: '/images/result_hedgehog.jpeg',
-        animalTitle: (
-          <div>
-            <span>고독한 사색가</span>
-            <br />
-            말랑말랑 고슴이
-          </div>
-        ),
+        animalTitle: <div>당신은 ‘반성하는 선택주의자'입니다.</div>,
         animalSubTitle: '혼자있지 말고 나랑 같이 놀자!',
         animalDescription: (
           <div>
-            <div>• 말수가 적고 수줍음을 잘 타요.</div>
-            <div>• 자기만의 세계가 있어요.</div>
-            <div>• 자주 멍을 때려요.</div>
-            <div>• 의식의 흐름대로 생각하고 행동해요.</div>
-            <div>• 행동과 말을 조심해요.</div>
-            <div>• 말할까, 말까를 10번 넘게 고민해요.</div>
-            <div>• 무슨 생각해? 라는 말을 자주 들어요.</div>
-            <div>• 고독을 즐길 줄 알아요.</div>
-            <div>• 외로움을 안 타요.</div>
-            <div>• 누군가에게 피해를 주는 걸 싫어해요.</div>
+            <div>• 내향적 성향이에요.</div>
+            <div>• 자기 자신을 많이 돌아보고 생각해요.</div>
+            <div>• 타인보다는 ‘나'를 중요하게 생각해요.</div>
+            <div>• 현실적이에요.</div>
+            <div>• 자신의 감정을 잘 표현하지 않아요</div>
+            <div>• 타인에 대한 공감능력이 풍부해요.</div>
+            <div>• 잦은 충돌이나 스트레스를 피하려고 해요.</div>
+            <div>• 여러사람과 어울리는 것을 즐겨요. 외로운 것을 싫어해서요.</div>
+            <div>• 낙관적이에요.</div>
+            <div>• 사람들과 사이가 좋아요</div>
+            <div>• 종종 분위기 메이커가 되어요 (선택적)</div>
+            <div>• 자제력이 있어요.</div>
+            <div>• 종종 엄격하고 고지식한 면을 발견하기도 해요</div>
+            <div>• 자기 주정이 강하지 않아요</div>
+            <div>• 욕심을 많이 부리지 않아요</div>
           </div>
         ),
         letterTitle: '💌     고슴이가 보내는 편지      💌',
@@ -590,70 +664,607 @@ export const setResultContents = (type: string): ResultContent => {
           </div>
         ),
         dislikeLinkUrl: '/result/cat',
+        radarData: {
+          labels: ['신경성', '창의성', '외향성', '우호성', '성실성'],
+          datasets: [
+            {
+              data: [60, 30, 10, 80, 20],
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderColor: 'rgba(255, 99, 132, 1)',
+              borderWidth: 1,
+            },
+          ],
+        },
       };
-    default:
+    case 'font_type_10':
       return {
-        mainColor: '#FFA985',
+        mainColor: '#8E7C52',
 
-        logoImage: '/images/result_dog.jpeg',
-        animalTitle: (
-          <div>
-            <span>만인의 에너자이저</span>
-            <br />
-            말랑말랑 멍무이
-          </div>
-        ),
+        logoImage: '/images/result_hedgehog.jpeg',
+        animalTitle: <div>당신은 ‘질서정연한 청렴주의자'입니다.</div>,
         animalSubTitle: '혼자있지 말고 나랑 같이 놀자!',
         animalDescription: (
           <div>
-            <div>• 주변 사람을 즐겁게 하는 밝은 에너지가 있어요.</div>
-            <div>• 사람과 함께 있으면서 에너지를 얻어요.</div>
-            <div>• 누구에게든 사랑받고 관심받는 걸 좋아해요.</div>
-            <div>• 타인의 선택을 존중해줘요.</div>
-            <div>• 내가 직접 무언가를 하겠다고 나서지는 않아요.</div>
-            <div>• 관심이 생기면 적극적으로 호감을 표현해요.</div>
-            <div>• 타인이 싫어하는 행동은 하지 않으려고 해요.</div>
-            <div>• 혼자 있을 때 쉽게 우울해져요.</div>
-            <div>• 조금 낯가림을 타지만 금방 친해져요.</div>
-            <div>• 상처를 잘 받으면서도 쉽게 사람을 믿어요.</div>
+            <div>• 질서를 잘 지켜요 그래서 규율과 도덕을 중시해요.</div>
+            <div>• 독립적이에요.</div>
+            <div>• 여러사람과 어울리는걸 좋아해요</div>
+            <div>• 외로운 것을 싫어해요</div>
+            <div>• 낙관적이에요</div>
+            <div>• 동료와 사이가 좋아요 종종 분위기 메이커가 되어요</div>
+            <div>• 자제력이 뒤어나요</div>
+            <div>• 이기적인 면이 있어요</div>
+            <div>• 속내를 잘 드러내지 않아요</div>
+            <div>• 고지식한 면이 있어요</div>
+            <div>• 사회성이 좋아요</div>
+            <div>• 관계의 맺고 끊음을 어려워 해요</div>
+            <div>• 조용하고 빈틈이 없어요.</div>
+            <div>• 자기 고집이 있어요.</div>
           </div>
         ),
-        letterTitle: '💌      멍무이가 보내는 편지      💌',
+        letterTitle: '💌     고슴이가 보내는 편지      💌',
         letter: (
           <div>
-            안녕? 만나서 반가워.
+            우리는 왜 생각할까? 무엇을 위해서 우리는 존재할까.
             <br />
-            나는 너와 닮은 멍무이라고 해.
-            <br /> 요즘 어떻게 지내?
+            하늘에 물어보지만, 답을 찾을 수는 없는 것 같아.
+            <br /> 그래서 계속 나만의 답을 찾아다니고 있어.
+            <br /> 이런 생각을 누군가에게 말하기는 조심스럽더라고.
             <br />
-            난 늘 새로운 오늘을 살고 있어.
+            왜냐고 물어본다면….
+            <br /> 나를 이해해주지 않을 거 같아서 그래.
+            <br /> 난 혼자만의 생각이 너무 소중하고 중요하거든.
             <br />
-            어떤 사람을 만날지, 어떤 대화를 할지 새로운 것이 넘쳐나잖아!
+            그리고 생각의 과정이 즐거워.
+            <br /> 가끔 끝도 없는 고독함에 빠지기도 하지만
+            <br /> 오히려 내가 존재하는 이유를 알려주기도 해.
             <br />
-            가끔 다른 친구들로 인해서 상처받는 날도 오지만, 서로 다르기 때문에 그런 거라 생각하고
-            받아들이고 있어.
-            <br /> 누군가를 싫어하고 미워하는 거보다는 친구를 있는 그대로 좋아할 때 힘이 나는 것
-            같아!
-            <br /> 너도 그렇지? 늘 즐겁고, 행복한 하루를 보내길 바랄게. 응원해 멍멍!
+            너한테만은 말할 수 있을 거 같아서 이렇게 편지해.
+            <br /> 어디서든 너를 응원하고 있을게. 기죽지 마.
           </div>
         ),
-        letterImage: '/images/result_paper_dog.jpeg',
-        likeImageUrl: '/images/result_rabbit.jpeg',
+        letterImage: '/images/result_paper_hedgehog.jpeg',
+        likeImageUrl: '/images/result_cow.jpeg',
         likeDescription: (
           <div>
-            개성강한 힙스터
-            <br /> 말랑말랑 토토
+            차분한 평화주의자
+            <br /> 말랑말랑 소소
           </div>
         ),
-        likeLinkUrl: '/result/rabbit',
-        dislikeImageUrl: '/images/result_bear.jpeg',
+        likeLinkUrl: '/result/cow',
+        dislikeImageUrl: '/images/result_cat.jpeg',
         dislikeDescription: (
           <div>
-            푸근한 대인배
-            <br /> 말랑말랑 곰쥬
+            은근한 최강자
+            <br /> 말랑말랑 냠미
           </div>
         ),
-        dislikeLinkUrl: '/result/bear',
+        dislikeLinkUrl: '/result/cat',
+        radarData: {
+          labels: ['신경성', '창의성', '외향성', '우호성', '성실성'],
+          datasets: [
+            {
+              data: [10, 30, 70, 60, 90],
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderColor: 'rgba(255, 99, 132, 1)',
+              borderWidth: 1,
+            },
+          ],
+        },
+      };
+    case 'font_type_11':
+      return {
+        mainColor: '#8E7C52',
+
+        logoImage: '/images/result_hedgehog.jpeg',
+        animalTitle: <div>당신은 ‘사교적인 예민주의자'입니다.</div>,
+        animalSubTitle: '혼자있지 말고 나랑 같이 놀자!',
+        animalDescription: (
+          <div>
+            <div>• 여러사람들과 어울리는 것을 즐겨요</div>
+            <div>• 종종 충동적이에요</div>
+            <div>• 시간관리에 약해요</div>
+            <div>• 외로운걸 싫어해요</div>
+            <div>• 자기중심적이에요</div>
+            <div>• 열정적이에요</div>
+            <div>• 예민해요</div>
+            <div>• 주위에 친구가 많아요</div>
+            <div>• 따뜻하고 열린 마음의 소유자에요</div>
+            <div>• 자신감이 넘치고 활기차요</div>
+            <div>• 시작한걸 마무리 짓기 힘들어해요</div>
+            <div>• 소심한 면도 있어요</div>
+            <div>• 감정 관리가 어려울 때가 있어요</div>
+            <div>• 맺고 끊는걸 어려워해요</div>
+            <div>• 고지식한 면이 있어요</div>
+          </div>
+        ),
+        letterTitle: '💌     고슴이가 보내는 편지      💌',
+        letter: (
+          <div>
+            우리는 왜 생각할까? 무엇을 위해서 우리는 존재할까.
+            <br />
+            하늘에 물어보지만, 답을 찾을 수는 없는 것 같아.
+            <br /> 그래서 계속 나만의 답을 찾아다니고 있어.
+            <br /> 이런 생각을 누군가에게 말하기는 조심스럽더라고.
+            <br />
+            왜냐고 물어본다면….
+            <br /> 나를 이해해주지 않을 거 같아서 그래.
+            <br /> 난 혼자만의 생각이 너무 소중하고 중요하거든.
+            <br />
+            그리고 생각의 과정이 즐거워.
+            <br /> 가끔 끝도 없는 고독함에 빠지기도 하지만
+            <br /> 오히려 내가 존재하는 이유를 알려주기도 해.
+            <br />
+            너한테만은 말할 수 있을 거 같아서 이렇게 편지해.
+            <br /> 어디서든 너를 응원하고 있을게. 기죽지 마.
+          </div>
+        ),
+        letterImage: '/images/result_paper_hedgehog.jpeg',
+        likeImageUrl: '/images/result_cow.jpeg',
+        likeDescription: (
+          <div>
+            차분한 평화주의자
+            <br /> 말랑말랑 소소
+          </div>
+        ),
+        likeLinkUrl: '/result/cow',
+        dislikeImageUrl: '/images/result_cat.jpeg',
+        dislikeDescription: (
+          <div>
+            은근한 최강자
+            <br /> 말랑말랑 냠미
+          </div>
+        ),
+        dislikeLinkUrl: '/result/cat',
+        radarData: {
+          labels: ['신경성', '창의성', '외향성', '우호성', '성실성'],
+          datasets: [
+            {
+              data: [90, 20, 40, 70, 10],
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderColor: 'rgba(255, 99, 132, 1)',
+              borderWidth: 1,
+            },
+          ],
+        },
+      };
+    case 'font_type_12':
+      return {
+        mainColor: '#8E7C52',
+
+        logoImage: '/images/result_hedgehog.jpeg',
+        animalTitle: <div>당신은 ‘성실한 냉소주의자'입니다.</div>,
+        animalSubTitle: '혼자있지 말고 나랑 같이 놀자!',
+        animalDescription: (
+          <div>
+            <div>• 올곧아요</div>
+            <div>• 냉담한 면이 있어요</div>
+            <div>• 신경질 적이예요</div>
+            <div>• 포커페이스를 잘해요</div>
+            <div>• 과묵하고 겸손해요</div>
+            <div>• 규율과 도덕을 중시해요</div>
+            <div>• 인지력이 뛰어나요</div>
+            <div>• 높은 기억력을 가졌어요</div>
+            <div>• 욕심부리지 않아요</div>
+            <div>• 소수의 사람과 어울리는 것을 좋아해요</div>
+            <div>• 외로운건 싫지만 매일 약속이 있는 건 싫어해요.</div>
+            <div>• 영리해요</div>
+            <div>• 자신에게 혹독해요</div>
+          </div>
+        ),
+        letterTitle: '💌     고슴이가 보내는 편지      💌',
+        letter: (
+          <div>
+            우리는 왜 생각할까? 무엇을 위해서 우리는 존재할까.
+            <br />
+            하늘에 물어보지만, 답을 찾을 수는 없는 것 같아.
+            <br /> 그래서 계속 나만의 답을 찾아다니고 있어.
+            <br /> 이런 생각을 누군가에게 말하기는 조심스럽더라고.
+            <br />
+            왜냐고 물어본다면….
+            <br /> 나를 이해해주지 않을 거 같아서 그래.
+            <br /> 난 혼자만의 생각이 너무 소중하고 중요하거든.
+            <br />
+            그리고 생각의 과정이 즐거워.
+            <br /> 가끔 끝도 없는 고독함에 빠지기도 하지만
+            <br /> 오히려 내가 존재하는 이유를 알려주기도 해.
+            <br />
+            너한테만은 말할 수 있을 거 같아서 이렇게 편지해.
+            <br /> 어디서든 너를 응원하고 있을게. 기죽지 마.
+          </div>
+        ),
+        letterImage: '/images/result_paper_hedgehog.jpeg',
+        likeImageUrl: '/images/result_cow.jpeg',
+        likeDescription: (
+          <div>
+            차분한 평화주의자
+            <br /> 말랑말랑 소소
+          </div>
+        ),
+        likeLinkUrl: '/result/cow',
+        dislikeImageUrl: '/images/result_cat.jpeg',
+        dislikeDescription: (
+          <div>
+            은근한 최강자
+            <br /> 말랑말랑 냠미
+          </div>
+        ),
+        dislikeLinkUrl: '/result/cat',
+        radarData: {
+          labels: ['신경성', '창의성', '외향성', '우호성', '성실성'],
+          datasets: [
+            {
+              data: [90, 20, 30, 40, 90],
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderColor: 'rgba(255, 99, 132, 1)',
+              borderWidth: 1,
+            },
+          ],
+        },
+      };
+    case 'font_type_13':
+      return {
+        mainColor: '#8E7C52',
+
+        logoImage: '/images/result_hedgehog.jpeg',
+        animalTitle: <div>당신은 ‘저항하는 감성주의자' 입니다.</div>,
+        animalSubTitle: '혼자있지 말고 나랑 같이 놀자!',
+        animalDescription: (
+          <div>
+            <div>• 여러사람과 어울리는 것을 좋아해요</div>
+            <div>• 외로운걸 싫어해요</div>
+            <div>• 틀에 갇힌 걸 싫어해요</div>
+            <div>• 자기중심적이에요</div>
+            <div>• 열정적이에요</div>
+            <div>• 예민해요</div>
+            <div>• 자제력이 뛰어나요</div>
+            <div>• 이기적인 면이 있어요</div>
+            <div>• 팀워크랑 맞지 않아요</div>
+            <div>• 속내를 드러내지 않아요</div>
+            <div>• 종종 충동적이에요</div>
+            <div>• 염격하고 고지식해요</div>
+            <div>• 인정욕구가 있어요</div>
+            <div>• 자기애가 강해요.</div>
+          </div>
+        ),
+        letterTitle: '💌     고슴이가 보내는 편지      💌',
+        letter: (
+          <div>
+            우리는 왜 생각할까? 무엇을 위해서 우리는 존재할까.
+            <br />
+            하늘에 물어보지만, 답을 찾을 수는 없는 것 같아.
+            <br /> 그래서 계속 나만의 답을 찾아다니고 있어.
+            <br /> 이런 생각을 누군가에게 말하기는 조심스럽더라고.
+            <br />
+            왜냐고 물어본다면….
+            <br /> 나를 이해해주지 않을 거 같아서 그래.
+            <br /> 난 혼자만의 생각이 너무 소중하고 중요하거든.
+            <br />
+            그리고 생각의 과정이 즐거워.
+            <br /> 가끔 끝도 없는 고독함에 빠지기도 하지만
+            <br /> 오히려 내가 존재하는 이유를 알려주기도 해.
+            <br />
+            너한테만은 말할 수 있을 거 같아서 이렇게 편지해.
+            <br /> 어디서든 너를 응원하고 있을게. 기죽지 마.
+          </div>
+        ),
+        letterImage: '/images/result_paper_hedgehog.jpeg',
+        likeImageUrl: '/images/result_cow.jpeg',
+        likeDescription: (
+          <div>
+            차분한 평화주의자
+            <br /> 말랑말랑 소소
+          </div>
+        ),
+        likeLinkUrl: '/result/cow',
+        dislikeImageUrl: '/images/result_cat.jpeg',
+        dislikeDescription: (
+          <div>
+            은근한 최강자
+            <br /> 말랑말랑 냠미
+          </div>
+        ),
+        dislikeLinkUrl: '/result/cat',
+        radarData: {
+          labels: ['신경성', '창의성', '외향성', '우호성', '성실성'],
+          datasets: [
+            {
+              data: [10, 40, 70, 90, 20],
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderColor: 'rgba(255, 99, 132, 1)',
+              borderWidth: 1,
+            },
+          ],
+        },
+      };
+    case 'font_type_14':
+      return {
+        mainColor: '#8E7C52',
+
+        logoImage: '/images/result_hedgehog.jpeg',
+        animalTitle: <div>당신은 ‘저돌적인 직관주의자'입니다.</div>,
+        animalSubTitle: '혼자있지 말고 나랑 같이 놀자!',
+        animalDescription: (
+          <div>
+            <div>• 영리해요</div>
+            <div>• 공격적인 성향을 억누르고 있어요</div>
+            <div>• 자신에게 혹독하고 타인에게 관대해요</div>
+            <div>• 참을성이 없어서 인내심이 약해요</div>
+            <div>• 게으른 걸 싫어해요</div>
+            <div>• 직관적으로 결정해요.</div>
+            <div>• 인정욕구가 있어요</div>
+            <div>• 열정적이고 활기하요</div>
+            <div>• 즉흥적으로 행동해요.</div>
+            <div>• 고지식한 면이 있어요.</div>
+            <div>• 자시중심적이에요.</div>
+            <div>• 친구를 소중하게 생각해요.</div>
+            <div>• 새로운 만남에 거부감이 없어요.</div>
+          </div>
+        ),
+        letterTitle: '💌     고슴이가 보내는 편지      💌',
+        letter: (
+          <div>
+            우리는 왜 생각할까? 무엇을 위해서 우리는 존재할까.
+            <br />
+            하늘에 물어보지만, 답을 찾을 수는 없는 것 같아.
+            <br /> 그래서 계속 나만의 답을 찾아다니고 있어.
+            <br /> 이런 생각을 누군가에게 말하기는 조심스럽더라고.
+            <br />
+            왜냐고 물어본다면….
+            <br /> 나를 이해해주지 않을 거 같아서 그래.
+            <br /> 난 혼자만의 생각이 너무 소중하고 중요하거든.
+            <br />
+            그리고 생각의 과정이 즐거워.
+            <br /> 가끔 끝도 없는 고독함에 빠지기도 하지만
+            <br /> 오히려 내가 존재하는 이유를 알려주기도 해.
+            <br />
+            너한테만은 말할 수 있을 거 같아서 이렇게 편지해.
+            <br /> 어디서든 너를 응원하고 있을게. 기죽지 마.
+          </div>
+        ),
+        letterImage: '/images/result_paper_hedgehog.jpeg',
+        likeImageUrl: '/images/result_cow.jpeg',
+        likeDescription: (
+          <div>
+            차분한 평화주의자
+            <br /> 말랑말랑 소소
+          </div>
+        ),
+        likeLinkUrl: '/result/cow',
+        dislikeImageUrl: '/images/result_cat.jpeg',
+        dislikeDescription: (
+          <div>
+            은근한 최강자
+            <br /> 말랑말랑 냠미
+          </div>
+        ),
+        dislikeLinkUrl: '/result/cat',
+        radarData: {
+          labels: ['신경성', '창의성', '외향성', '우호성', '성실성'],
+          datasets: [
+            {
+              data: [20, 30, 90, 50, 90],
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderColor: 'rgba(255, 99, 132, 1)',
+              borderWidth: 1,
+            },
+          ],
+        },
+      };
+    case 'font_type_15':
+      return {
+        mainColor: '#8E7C52',
+
+        logoImage: '/images/result_hedgehog.jpeg',
+        animalTitle: <div>당신은 ‘섬세한 공상주의자’입니다.</div>,
+        animalSubTitle: '혼자있지 말고 나랑 같이 놀자!',
+        animalDescription: (
+          <div>
+            <div>• 창의적이고 예술적이에요</div>
+            <div>• 충돌을 싫어해요</div>
+            <div>• 여러사람들과 잘 어울려 지내요</div>
+            <div>• 감수성이 풍부해요</div>
+            <div>• 내면에 열정이 있어요</div>
+            <div>• 내성적이에요</div>
+            <div>• 종종 자기만의 세계에 빠져 지내요</div>
+            <div>• 자기 주장이 약해요</div>
+            <div>• 욕심을 많이 부리지 않아요.</div>
+            <div>• 관계의 맺고끊음을 어려워해요.</div>
+            <div>• 종종 감정에 너무 깊이 빠지고는 해요.</div>
+          </div>
+        ),
+        letterTitle: '💌     고슴이가 보내는 편지      💌',
+        letter: (
+          <div>
+            우리는 왜 생각할까? 무엇을 위해서 우리는 존재할까.
+            <br />
+            하늘에 물어보지만, 답을 찾을 수는 없는 것 같아.
+            <br /> 그래서 계속 나만의 답을 찾아다니고 있어.
+            <br /> 이런 생각을 누군가에게 말하기는 조심스럽더라고.
+            <br />
+            왜냐고 물어본다면….
+            <br /> 나를 이해해주지 않을 거 같아서 그래.
+            <br /> 난 혼자만의 생각이 너무 소중하고 중요하거든.
+            <br />
+            그리고 생각의 과정이 즐거워.
+            <br /> 가끔 끝도 없는 고독함에 빠지기도 하지만
+            <br /> 오히려 내가 존재하는 이유를 알려주기도 해.
+            <br />
+            너한테만은 말할 수 있을 거 같아서 이렇게 편지해.
+            <br /> 어디서든 너를 응원하고 있을게. 기죽지 마.
+          </div>
+        ),
+        letterImage: '/images/result_paper_hedgehog.jpeg',
+        likeImageUrl: '/images/result_cow.jpeg',
+        likeDescription: (
+          <div>
+            차분한 평화주의자
+            <br /> 말랑말랑 소소
+          </div>
+        ),
+        likeLinkUrl: '/result/cow',
+        dislikeImageUrl: '/images/result_cat.jpeg',
+        dislikeDescription: (
+          <div>
+            은근한 최강자
+            <br /> 말랑말랑 냠미
+          </div>
+        ),
+        dislikeLinkUrl: '/result/cat',
+        radarData: {
+          labels: ['신경성', '창의성', '외향성', '우호성', '성실성'],
+          datasets: [
+            {
+              data: [70, 90, 50, 40, 10],
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderColor: 'rgba(255, 99, 132, 1)',
+              borderWidth: 1,
+            },
+          ],
+        },
+      };
+    case 'font_type_16':
+      return {
+        mainColor: '#8E7C52',
+
+        logoImage: '/images/result_hedgehog.jpeg',
+        animalTitle: <div>당신은 ‘의존하는 평등주의자'입니다.</div>,
+        animalSubTitle: '혼자있지 말고 나랑 같이 놀자!',
+        animalDescription: (
+          <div>
+            <div>• 새로운 사람을 만나는 것에 거부감이 없어요.</div>
+            <div>• 정서적이에요</div>
+            <div>• 친구와 가족을 소중히 여겨요</div>
+            <div>• 사람들과 어울리는 것을 즐겨요</div>
+            <div>• 외로운걸 싫어해요</div>
+            <div>• 다같이 있는걸 좋아해요.</div>
+            <div>• 따뜻하고 열린 마음을 가지고 있어요</div>
+            <div>• 활기넘쳐요</div>
+            <div>• 시작한걸 마무리 짓는걸 힘들어해요</div>
+            <div>• 주위에 친구가 많아요</div>
+            <div>• 자신감이 넘쳐요</div>
+          </div>
+        ),
+        letterTitle: '💌     고슴이가 보내는 편지      💌',
+        letter: (
+          <div>
+            우리는 왜 생각할까? 무엇을 위해서 우리는 존재할까.
+            <br />
+            하늘에 물어보지만, 답을 찾을 수는 없는 것 같아.
+            <br /> 그래서 계속 나만의 답을 찾아다니고 있어.
+            <br /> 이런 생각을 누군가에게 말하기는 조심스럽더라고.
+            <br />
+            왜냐고 물어본다면….
+            <br /> 나를 이해해주지 않을 거 같아서 그래.
+            <br /> 난 혼자만의 생각이 너무 소중하고 중요하거든.
+            <br />
+            그리고 생각의 과정이 즐거워.
+            <br /> 가끔 끝도 없는 고독함에 빠지기도 하지만
+            <br /> 오히려 내가 존재하는 이유를 알려주기도 해.
+            <br />
+            너한테만은 말할 수 있을 거 같아서 이렇게 편지해.
+            <br /> 어디서든 너를 응원하고 있을게. 기죽지 마.
+          </div>
+        ),
+        letterImage: '/images/result_paper_hedgehog.jpeg',
+        likeImageUrl: '/images/result_cow.jpeg',
+        likeDescription: (
+          <div>
+            차분한 평화주의자
+            <br /> 말랑말랑 소소
+          </div>
+        ),
+        likeLinkUrl: '/result/cow',
+        dislikeImageUrl: '/images/result_cat.jpeg',
+        dislikeDescription: (
+          <div>
+            은근한 최강자
+            <br /> 말랑말랑 냠미
+          </div>
+        ),
+        dislikeLinkUrl: '/result/cat',
+        radarData: {
+          labels: ['신경성', '창의성', '외향성', '우호성', '성실성'],
+          datasets: [
+            {
+              data: [20, 30, 70, 90, 10],
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderColor: 'rgba(255, 99, 132, 1)',
+              borderWidth: 1,
+            },
+          ],
+        },
+      };
+    default:
+      return {
+        mainColor: '#8E7C52',
+
+        logoImage: '/images/result_hedgehog.jpeg',
+        animalTitle: <div>당신은 ‘의존하는 평등주의자'입니다.</div>,
+        animalSubTitle: '혼자있지 말고 나랑 같이 놀자!',
+        animalDescription: (
+          <div>
+            <div>• 새로운 사람을 만나는 것에 거부감이 없어요.</div>
+            <div>• 정서적이에요</div>
+            <div>• 친구와 가족을 소중히 여겨요</div>
+            <div>• 사람들과 어울리는 것을 즐겨요</div>
+            <div>• 외로운걸 싫어해요</div>
+            <div>• 다같이 있는걸 좋아해요.</div>
+            <div>• 따뜻하고 열린 마음을 가지고 있어요</div>
+            <div>• 활기넘쳐요</div>
+            <div>• 시작한걸 마무리 짓는걸 힘들어해요</div>
+            <div>• 주위에 친구가 많아요</div>
+            <div>• 자신감이 넘쳐요</div>
+          </div>
+        ),
+        letterTitle: '💌     고슴이가 보내는 편지      💌',
+        letter: (
+          <div>
+            우리는 왜 생각할까? 무엇을 위해서 우리는 존재할까.
+            <br />
+            하늘에 물어보지만, 답을 찾을 수는 없는 것 같아.
+            <br /> 그래서 계속 나만의 답을 찾아다니고 있어.
+            <br /> 이런 생각을 누군가에게 말하기는 조심스럽더라고.
+            <br />
+            왜냐고 물어본다면….
+            <br /> 나를 이해해주지 않을 거 같아서 그래.
+            <br /> 난 혼자만의 생각이 너무 소중하고 중요하거든.
+            <br />
+            그리고 생각의 과정이 즐거워.
+            <br /> 가끔 끝도 없는 고독함에 빠지기도 하지만
+            <br /> 오히려 내가 존재하는 이유를 알려주기도 해.
+            <br />
+            너한테만은 말할 수 있을 거 같아서 이렇게 편지해.
+            <br /> 어디서든 너를 응원하고 있을게. 기죽지 마.
+          </div>
+        ),
+        letterImage: '/images/result_paper_hedgehog.jpeg',
+        likeImageUrl: '/images/result_cow.jpeg',
+        likeDescription: (
+          <div>
+            차분한 평화주의자
+            <br /> 말랑말랑 소소
+          </div>
+        ),
+        likeLinkUrl: '/result/cow',
+        dislikeImageUrl: '/images/result_cat.jpeg',
+        dislikeDescription: (
+          <div>
+            은근한 최강자
+            <br /> 말랑말랑 냠미
+          </div>
+        ),
+        dislikeLinkUrl: '/result/cat',
+        radarData: {
+          labels: ['신경성', '창의성', '외향성', '우호성', '성실성'],
+          datasets: [
+            {
+              data: [20, 30, 70, 90, 10],
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderColor: 'rgba(255, 99, 132, 1)',
+              borderWidth: 1,
+            },
+          ],
+        },
       };
   }
 };

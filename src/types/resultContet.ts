@@ -13,4 +13,15 @@ export interface ResultContent {
   dislikeImageUrl: string;
   dislikeDescription: React.ReactNode;
   dislikeLinkUrl: string;
+  radarData: {
+    labels: string[];
+    datasets: [
+      {
+        data: number[];
+        backgroundColor: string;
+        borderColor: string;
+        borderWidth: number;
+      }
+    ];
+  };
 }

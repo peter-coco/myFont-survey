@@ -15,7 +15,7 @@ export const ResultPercentage = styled.div<{ mainColor: string }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Jua';
+  font-family: '나눔손글씨 가람연꽃';
   & > span {
     color: ${(props) => props.mainColor};
   }
@@ -33,7 +33,7 @@ export const ResultAnimalTitle = styled.div<{ mainColor: string }>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: 'Jua';
+  font-family: '나눔손글씨 가람연꽃';
   & > div {
     text-align: center;
   }

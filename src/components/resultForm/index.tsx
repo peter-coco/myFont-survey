@@ -6,12 +6,35 @@ import KakaoShareButton from '../kakaoShare';
 import KakaoAdfit from '../kakaoAdfit';
 import { firebaseDB } from '../../config/firebase';
 import ReactAudioPlayer from 'react-audio-player';
+import {
+  Chart as ChartJS,
+  RadialLinearScale,
+  PointElement,
+  LineElement,
+  Filler,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+import { Radar } from 'react-chartjs-2';
+
+ChartJS.register(RadialLinearScale, PointElement, LineElement, Filler, Tooltip);
 
 const ResultType = ({ type = 'dog' }: { type?: string }) => {
   const creatorLogo = '/images/replace_logo.png';
   const shareLinkLogo = '/images/shareLink.png';
   const soundTrack = '/sound/survey_bgm.mp3';
 
+  const [radarData, setRadarData] = useState({
+    labels: ['신경성', '창의성', '외향성', '우호성', '성실성'],
+    datasets: [
+      {
+        data: [20, 90, 30, 50, 25],
+        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+        borderColor: 'rgba(255, 99, 132, 1)',
+        borderWidth: 1,
+      },
+    ],
+  });
   const copyLinkRef = useRef('window.location.href');
   const [resultPercent, setResultPercent] = useState(0);
 
@@ -163,6 +186,7 @@ const ResultType = ({ type = 'dog' }: { type?: string }) => {
     setResultDislikeImageUrl(resultContent.dislikeImageUrl);
     setResultDislikeDescription(resultContent.dislikeDescription);
     setResultDislikeLinkUrl(resultContent.dislikeLinkUrl);
+    setRadarData(resultContent.radarData);
   }, []);
 
   useEffect(() => {
@@ -226,13 +250,14 @@ const ResultType = ({ type = 'dog' }: { type?: string }) => {
       <Styles.ResultPercentage mainColor={resultMainColor}>
         나와 비슷한 유형의 사람이&nbsp;<span>{resultPercent}%</span>&nbsp;있어요.
       </Styles.ResultPercentage>
-      <Styles.ResultAnimalImage src={resultLogoImage} />
+      {/* <Styles.ResultAnimalImage src={resultLogoImage} /> */}
+      <Radar data={radarData} />
       <Styles.ResultAnimalTitle mainColor={resultMainColor}>
         {resultAnimalTitle}
       </Styles.ResultAnimalTitle>
-      <Styles.ResultAnimalSubTitle mainColor={resultMainColor}>
+      {/* <Styles.ResultAnimalSubTitle mainColor={resultMainColor}>
         {resultAnimalSubTitle}
-      </Styles.ResultAnimalSubTitle>
+      </Styles.ResultAnimalSubTitle> */}
       <Styles.ResultCreatorDescription>{resultAnimalDescription}</Styles.ResultCreatorDescription>
       <Styles.ResultLetterWrap>
         <Styles.ResultLetterTitle mainColor={resultMainColor}>

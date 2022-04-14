@@ -204,24 +204,38 @@ const ResultType = ({ type = 'dog' }: { type?: string }) => {
         const items = item.data();
         let typeCount = 0;
 
-        if (type === 'raccon') {
-          typeCount = items?.raccon;
-        } else if (type === 'fox') {
-          typeCount = items?.fox;
-        } else if (type === 'dog') {
-          typeCount = items?.dog;
-        } else if (type === 'bear') {
-          typeCount = items?.bear;
-        } else if (type === 'cow') {
-          typeCount = items?.cow;
-        } else if (type === 'hamster') {
-          typeCount = items?.hamster;
-        } else if (type === 'rabbit') {
-          typeCount = items?.rabbit;
-        } else if (type === 'cat') {
-          typeCount = items?.cat;
+        if (type === 'font_type_1') {
+          typeCount = items?.font_type_1;
+        } else if (type === 'font_type_2') {
+          typeCount = items?.font_type_2;
+        } else if (type === 'font_type_3') {
+          typeCount = items?.font_type_3;
+        } else if (type === 'font_type_4') {
+          typeCount = items?.font_type_4;
+        } else if (type === 'font_type_5') {
+          typeCount = items?.font_type_5;
+        } else if (type === 'font_type_6') {
+          typeCount = items?.font_type_6;
+        } else if (type === 'font_type_7') {
+          typeCount = items?.font_type_7;
+        } else if (type === 'font_type_8') {
+          typeCount = items?.font_type_8;
+        } else if (type === 'font_type_9') {
+          typeCount = items?.font_type_9;
+        } else if (type === 'font_type_10') {
+          typeCount = items?.font_type_10;
+        } else if (type === 'font_type_11') {
+          typeCount = items?.font_type_11;
+        } else if (type === 'font_type_12') {
+          typeCount = items?.font_type_12;
+        } else if (type === 'font_type_13') {
+          typeCount = items?.font_type_13;
+        } else if (type === 'font_type_14') {
+          typeCount = items?.font_type_14;
+        } else if (type === 'font_type_15') {
+          typeCount = items?.font_type_15;
         } else {
-          typeCount = items?.hedgehog;
+          typeCount = items?.font_type_16;
         }
 
         const percentage = Number(((typeCount / items?.total) * 100).toFixed(2));

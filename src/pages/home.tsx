@@ -41,6 +41,28 @@ const TitleWrap = styled.div`
   align-items: center;
   justify-content: center;
   background-color: #ffffff;
+  position: relative;
+`;
+const TitleLeftTop = styled.img`
+  width: 74px;
+  height: 73px;
+  position: absolute;
+  top: 0;
+  left: 15%;
+`;
+const TitleRightTop = styled.img`
+  width: 60px;
+  height: 57px;
+  position: absolute;
+  top: 0;
+  right: 20%;
+`;
+const TitleRightBottom = styled.img`
+  width: 73px;
+  height: 81px;
+  position: absolute;
+  bottom: 8%;
+  right: 8%;
 `;
 
 const ShapesWrap = styled.div``;
@@ -60,6 +82,10 @@ const Participant = styled.div`
 `;
 
 const Home = () => {
+  const homeTopRight = '/images/homeTopRight.png';
+  const homeTopLeft = '/images/homeTopLeft.png';
+  const homeBottomLeft = '/images/homeBottomRight.png';
+
   const [participatorCount, setParticipatorCount] = useState(0);
 
   useEffect(() => {
@@ -79,6 +105,10 @@ const Home = () => {
       <Paper />
       <ContentsWrap>
         <TitleWrap>
+          <TitleLeftTop src={homeTopLeft} />
+          <TitleRightTop src={homeTopRight} />
+          <TitleRightBottom src={homeBottomLeft} />
+
           <Title>
             좋아하는
             <br /> 글씨로

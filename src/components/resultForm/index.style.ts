@@ -2,12 +2,74 @@ import styled from 'styled-components';
 
 export const ResultFormWrap = styled.div`
   width: 100%;
+  height: 100%;
+
+  position: relative;
+`;
+
+export const DescriptionWrap = styled.div`
+  width: 286px;
+  padding: 20px 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #c4c4c4;
+  border-radius: 30px;
+`;
+export const ResultWrap = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 30px;
   padding: 10px 10px;
   box-sizing: border-box;
+  position: absolute;
+  z-index: 1px;
+  top: 0px;
+`;
+export const ResultTagWrap = styled.div`
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+`;
+export const ResultTag = styled.div<{ mainColor: string }>`
+  padding: 5px 16px;
+  box-sizing: border-box;
+  background-color: ${(props) => props.mainColor};
+  border-radius: 10px;
+  font-size: 13px;
+  font-family: '나눔손글씨 가람연꽃';
+  font-weight: 700;
+`;
+export const ResultCharaterWap = styled.div``;
+export const ResultCharaterTitle = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: '나눔손글씨 가람연꽃';
+  margin-bottom: 20px;
+  & > div {
+    text-align: center;
+  }
+`;
+export const ResultCharater = styled.div`
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+`;
+export const ResultDivider = styled.div<{ mainColor: string }>`
+  width: 80%;
+  /* height: 1px; */
+  border: 1px dashed ${(props) => props.mainColor};
 `;
 export const ResultPercentage = styled.div<{ mainColor: string }>`
   width: 100%;
@@ -16,24 +78,27 @@ export const ResultPercentage = styled.div<{ mainColor: string }>`
   align-items: center;
   justify-content: center;
   font-family: '나눔손글씨 가람연꽃';
+  font-size: 14px;
+
   & > span {
     color: ${(props) => props.mainColor};
   }
 `;
-export const ResultAnimalImage = styled.img`
+export const ResultFontImage = styled.img`
   width: 320px;
   height: 357px;
 `;
-export const ResultAnimalTitle = styled.div<{ mainColor: string }>`
+export const ResultFontTitle = styled.div<{ mainColor: string }>`
   width: 100%;
   display: flex;
   align-items: center;
-  font-size: 24px;
-  font-weight: 400;
+  font-size: 18px;
+  font-weight: 600;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: '나눔손글씨 가람연꽃';
+  word-break: keep-all;
   & > div {
     text-align: center;
   }
@@ -41,13 +106,13 @@ export const ResultAnimalTitle = styled.div<{ mainColor: string }>`
     color: ${(props) => props.mainColor};
   }
 `;
-export const ResultAnimalSubTitle = styled.div<{ mainColor: string }>`
+export const ResultFontSubTitle = styled.div<{ mainColor: string }>`
   font-size: 14px;
   font-weight: 400;
   font-family: 'Jua';
   color: ${(props) => props.mainColor};
 `;
-export const ResultAnimalDescription = styled.div`
+export const ResultFontDescription = styled.div`
   font-size: 14px;
   font-weight: 400;
 `;
@@ -55,10 +120,10 @@ export const ResultAnimalDescription = styled.div`
 export const ResultLetterWrap = styled.div`
   display: flex;
   flex-direction: column;
-  gap: -10px;
+  gap: 10px;
   align-items: center;
 `;
-export const ResultLetterTitle = styled.div<{ mainColor: string }>`
+export const ResultLetterTitle = styled.div<{ mainColor?: string }>`
   width: 251px;
   height: 38px;
   padding: 5px 5px;
@@ -75,17 +140,18 @@ export const ResultLetter = styled.div<{ bgImage: string }>`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  width: 319px;
-  height: 356px;
+  width: 270px;
+  height: 155px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: 700;
   padding: 10px 50px;
   box-sizing: border-box;
   text-align: center;
   word-break: keep-all;
-  font-family: 'Jua';
+  font-family: '나눔손글씨 가람연꽃';
   /* visibility: hidden; */
 
   .blast {
@@ -96,7 +162,7 @@ export const ResultLetter = styled.div<{ bgImage: string }>`
 export const ResultShareWrap = styled.div`
   width: 286px;
   /* height: 129px; */
-  padding: 5px 5px;
+  padding: 16px 5px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -107,13 +173,13 @@ export const ResultShareWrap = styled.div`
   gap: 10px;
 `;
 export const ResultShareTitle = styled.div`
-  font-weight: 400;
+  font-weight: 600;
   font-size: 14px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Jua';
+  font-family: '나눔손글씨 가람연꽃';
 `;
 export const ResultShareLinkWrap = styled.div`
   display: flex;
@@ -128,7 +194,7 @@ export const ResultShareLink = styled.img`
 
 export const ResultMatchWrap = styled.div`
   width: 286px;
-  padding: 5px 5px;
+  padding: 16px 5px;
   border: 1px solid #c4c4c4;
   border-radius: 30px;
   gap: 10px;
@@ -139,13 +205,13 @@ export const ResultMatchWrap = styled.div`
   justify-content: center;
 `;
 export const ResultMatchTitle = styled.div`
-  font-weight: 400;
+  font-weight: 600;
   font-size: 14px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Jua';
+  font-family: '나눔손글씨 가람연꽃';
 `;
 export const ResultMatchLikeWrap = styled.div`
   width: 40%;
@@ -231,12 +297,12 @@ export const ResultCreatorWrap = styled.div`
   border-radius: 30px;
 `;
 export const ResultCreatorTitle = styled.div`
-  font-weight: 400;
+  font-weight: 600;
   font-size: 14px;
   position: relative;
   display: flex;
   align-items: center;
-  font-family: 'Jua';
+  font-family: '나눔손글씨 가람연꽃';
   justify-content: center;
 `;
 export const ResultCreatorImage = styled.img`
@@ -285,7 +351,7 @@ export const ResultRetryBtn = styled.div`
   font-weight: 400;
   font-size: 20px;
   /* font-family: 'roboto'; */
-  font-family: 'Jua';
+  font-family: '나눔손글씨 가람연꽃';
   cursor: pointer;
 `;
 
@@ -312,13 +378,13 @@ export const TestReviewWrap = styled.div`
 `;
 
 export const TestReviewTitle = styled.div`
-  font-weight: 400;
+  font-weight: 600;
   font-size: 14px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Jua';
+  font-family: '나눔손글씨 가람연꽃';
 `;
 export const TestReviewContentsWrap = styled.div`
   display: flex;
@@ -357,4 +423,54 @@ export const TestReviewEmotionCount = styled.div`
   font-weight: 400;
   font-size: 9px;
   font-family: 'Jua';
+`;
+
+export const FontRankWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+export const FontRank = styled.div`
+  width: 248px;
+  height: 51px;
+  border-radius: 10px;
+  /* border: 1px solid #9d9a9a;
+  box-sizing: border-box; */
+  display: flex;
+`;
+export const FontRankLeft = styled.div<{ mainColor: string }>`
+  width: 70px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto';
+  /* border: 1px solid #ffffff; */
+  -webkit-text-stroke: 0.4px #ffffff;
+  font-weight: 900;
+  background-color: ${(props) => props.mainColor};
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-left: 1px solid #9d9a9a;
+  border-right: 1px solid #9d9a9a;
+  border-top: 1px solid #9d9a9a;
+  border-bottom: 1px solid #9d9a9a;
+  box-sizing: border-box;
+`;
+export const FontRankRight = styled.div`
+  width: calc(100% - 70px);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 20px;
+  font-family: '나눔손글씨 가람연꽃';
+  /* border-left: 1px solid #9d9a9a; */
+  border-right: 1px solid #9d9a9a;
+  border-top: 1px solid #9d9a9a;
+  border-bottom: 1px solid #9d9a9a;
+  box-sizing: border-box;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 `;

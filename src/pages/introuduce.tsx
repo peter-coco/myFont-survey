@@ -27,6 +27,8 @@ const ContentsWrap = styled.div`
 const Description = styled.div`
   font-weight: 600;
   font-size: 18px;
+  width: 246px;
+  height: 367px;
   display: flex;
   padding: 25px 7px;
   box-sizing: border-box;
@@ -35,14 +37,35 @@ const Description = styled.div`
   font-family: '나눔손글씨 가람연꽃';
   background: #f5ffe4;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  position: relative;
+`;
+
+const DescriptionTopLeftImg = styled.img`
+  position: absolute;
+  top: -25px;
+  left: -25px;
+  width: 123px;
+  height: 74px;
+  transform: scaleX(1);
+`;
+const DescriptionTopRightImg = styled.img`
+  position: absolute;
+  top: -25px;
+  right: -25px;
+  width: 123px;
+  height: 74px;
+  transform: scaleX(-1);
 `;
 
 const Introduce = () => {
+  const descriptionTopImg = '/images/IntroTitle.png';
   return (
     <IntroduceWrap>
       <Paper />
       <ContentsWrap>
         <Description>
+          <DescriptionTopLeftImg src={descriptionTopImg} />
+          <DescriptionTopRightImg src={descriptionTopImg} />
           글씨는
           <br /> 연필을 쥐는 법, 자음과 모음을 적는 법,
           <br /> 성격에 따라서 가지각색으로 드러납니다.

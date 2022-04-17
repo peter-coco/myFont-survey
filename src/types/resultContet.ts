@@ -1,9 +1,9 @@
 export interface ResultContent {
   mainColor: string;
   logoImage: string;
-  animalTitle: React.ReactNode;
-  animalSubTitle: string;
-  animalDescription: React.ReactNode;
+  fontTitle: React.ReactNode;
+  fontCharacter: React.ReactNode;
+  fontDescription: React.ReactNode;
   letterTitle: string;
   letter: React.ReactNode;
   letterImage: string;
@@ -24,4 +24,5 @@ export interface ResultContent {
       }
     ];
   };
+  resultTag: string[];
 }

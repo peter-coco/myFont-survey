@@ -16,10 +16,12 @@ import {
   Legend,
 } from 'chart.js';
 import { Radar } from 'react-chartjs-2';
+import Paper from '../paper';
+import setRankingName from '../../utils/setRankingName';
 
 ChartJS.register(RadialLinearScale, PointElement, LineElement, Filler, Tooltip);
 
-const ResultType = ({ type = 'dog' }: { type?: string }) => {
+const ResultType = ({ type = 'font_type_1' }: { type?: string }) => {
   const creatorLogo = '/images/replace_logo.png';
   const shareLinkLogo = '/images/shareLink.png';
   const soundTrack = '/sound/survey_bgm.mp3';
@@ -50,9 +52,9 @@ const ResultType = ({ type = 'dog' }: { type?: string }) => {
 
   const [resultMainColor, setResultMainColor] = useState('');
   const [resultLogoImage, setResultLogoImage] = useState('');
-  const [resultAnimalTitle, setResultAnimalTitle] = useState<React.ReactNode>();
-  const [resultAnimalSubTitle, setResultAnimalSubTitle] = useState('');
-  const [resultAnimalDescription, setResultAnimalDescription] = useState<React.ReactNode>();
+  const [resultFontTitle, setResultFontTitle] = useState<React.ReactNode>();
+  const [resultFontCharacter, setResultFontCharacter] = useState<React.ReactNode>();
+  const [resultFontDescription, setResultFontDescription] = useState<React.ReactNode>();
   const [resultLetterTitle, setResultLetterTitle] = useState('');
   const [resultLetter, setResultLetter] = useState<React.ReactNode>();
   const [resultLetterImage, setResultLetterImage] = useState('');
@@ -62,6 +64,10 @@ const ResultType = ({ type = 'dog' }: { type?: string }) => {
   const [resultDislikeImageUrl, setResultDislikeImageUrl] = useState('');
   const [resultDislikeDescription, setResultDislikeDescription] = useState<React.ReactNode>();
   const [resultDislikeLinkUrl, setResultDislikeLinkUrl] = useState('');
+  const [resultTag, setResultTag] = useState<string[]>([]);
+  const [resultRank1st, setResultRank1st] = useState<string>('');
+  const [resultRank2nd, setResultRank2nd] = useState<string>('');
+  const [resultRank3rd, setResultRank3rd] = useState<string>('');
 
   const handleLikeLinkBtn = () => {
     window.location.href = resultLikeLinkUrl;
@@ -174,9 +180,9 @@ const ResultType = ({ type = 'dog' }: { type?: string }) => {
   const handleResultContent = useCallback((resultContent: ResultContent) => {
     setResultMainColor(resultContent.mainColor);
     setResultLogoImage(resultContent.logoImage);
-    setResultAnimalTitle(resultContent.animalTitle);
-    setResultAnimalSubTitle(resultContent.animalSubTitle);
-    setResultAnimalDescription(resultContent.animalDescription);
+    setResultFontTitle(resultContent.fontTitle);
+    setResultFontCharacter(resultContent.fontCharacter);
+    setResultFontDescription(resultContent.fontDescription);
     setResultLetterTitle(resultContent.letterTitle);
     setResultLetter(resultContent.letter);
     setResultLetterImage(resultContent.letterImage);
@@ -187,6 +193,7 @@ const ResultType = ({ type = 'dog' }: { type?: string }) => {
     setResultDislikeDescription(resultContent.dislikeDescription);
     setResultDislikeLinkUrl(resultContent.dislikeLinkUrl);
     setRadarData(resultContent.radarData);
+    setResultTag(resultContent.resultTag);
   }, []);
 
   useEffect(() => {
@@ -202,6 +209,25 @@ const ResultType = ({ type = 'dog' }: { type?: string }) => {
       .get()
       .then((item) => {
         const items = item.data();
+        // console.log(items?.sort());
+
+        let sortable = [];
+        for (let name in items) {
+          if (name === 'total') continue;
+          // console.log(name);
+          sortable.push([name, items[name]]);
+        }
+
+        sortable.sort(function (a, b) {
+          return b[1] - a[1];
+        });
+
+        setResultRank1st(setRankingName(sortable[0][0]));
+        setResultRank2nd(setRankingName(sortable[1][0]));
+        setResultRank3rd(setRankingName(sortable[2][0]));
+
+        // console.log(sortable);
+
         let typeCount = 0;
 
         if (type === 'font_type_1') {
@@ -260,133 +286,119 @@ const ResultType = ({ type = 'dog' }: { type?: string }) => {
 
   return (
     <Styles.ResultFormWrap>
+      {/* <Paper /> */}
       <ReactAudioPlayer src={soundTrack} autoPlay controls={false} loop={true} volume={0.05} />
-      <Styles.ResultPercentage mainColor={resultMainColor}>
-        나와 비슷한 유형의 사람이&nbsp;<span>{resultPercent}%</span>&nbsp;있어요.
-      </Styles.ResultPercentage>
-      {/* <Styles.ResultAnimalImage src={resultLogoImage} /> */}
-      <Radar data={radarData} />
-      <Styles.ResultAnimalTitle mainColor={resultMainColor}>
-        {resultAnimalTitle}
-      </Styles.ResultAnimalTitle>
-      {/* <Styles.ResultAnimalSubTitle mainColor={resultMainColor}>
-        {resultAnimalSubTitle}
-      </Styles.ResultAnimalSubTitle> */}
-      <Styles.ResultCreatorDescription>{resultAnimalDescription}</Styles.ResultCreatorDescription>
-      <Styles.ResultLetterWrap>
-        <Styles.ResultLetterTitle mainColor={resultMainColor}>
-          {resultLetterTitle}
-        </Styles.ResultLetterTitle>
-        <Styles.ResultLetter bgImage={resultLetterImage}>{resultLetter}</Styles.ResultLetter>
-      </Styles.ResultLetterWrap>
-      <KakaoAdfit />
-      <Styles.ResultShareWrap>
-        <Styles.ResultShareTitle>
-          내 결과 공유하기
-          <Styles.UnderLinkBar mainColor={resultMainColor} />
-        </Styles.ResultShareTitle>
-        <Styles.ResultShareLinkWrap>
-          <KakaoShareButton />
-          {/* <Styles.ResultShareKakao></Styles.ResultShareKakao> */}
-          <Styles.ResultShareLink
-            src={shareLinkLogo}
-            onClick={() => handleShareLink(window.location.href)}
-          ></Styles.ResultShareLink>
-        </Styles.ResultShareLinkWrap>
-      </Styles.ResultShareWrap>
-      <Styles.ResultMatchWrap>
-        <Styles.ResultMatchTitle>
-          동물별 궁합
-          <Styles.UnderLinkBar mainColor={resultMainColor} />
-        </Styles.ResultMatchTitle>
-        <Styles.ResultMatchLikeDislikeWrap>
-          <Styles.ResultMatchLikeWrap>
-            <Styles.ResultMatchLikeTitle>좋아요</Styles.ResultMatchLikeTitle>
-            <Styles.ResultMatchLikeImage src={resultLikeImageUrl} />
-            <Styles.ResultMatchLikeDescription>
-              {resultLikeDescription}
-            </Styles.ResultMatchLikeDescription>
-            <Styles.ResultMatchLikeLinkBtn mainColor={resultMainColor} onClick={handleLikeLinkBtn}>
-              유형보기
-            </Styles.ResultMatchLikeLinkBtn>
-          </Styles.ResultMatchLikeWrap>
-          <Styles.ResultMatchDislikeWrap>
-            <Styles.ResultMatchDislikeTitle>
-              {type === 'cow' ? '좋아요' : '아쉬워요'}
-            </Styles.ResultMatchDislikeTitle>
-            <Styles.ResultMatchDislikeImage src={resultDislikeImageUrl} />
-            <Styles.ResultMatchDislikeDescription>
-              {resultDislikeDescription}
-            </Styles.ResultMatchDislikeDescription>
-            <Styles.ResultMatchDislikeLinkBtn
-              mainColor={resultMainColor}
-              onClick={handleDislikeLinkBtn}
-            >
-              유형보기
-            </Styles.ResultMatchDislikeLinkBtn>
-          </Styles.ResultMatchDislikeWrap>
-        </Styles.ResultMatchLikeDislikeWrap>
-      </Styles.ResultMatchWrap>
-      <Styles.TestReviewWrap>
-        <Styles.TestReviewTitle>
-          테스트는 어땠나요?
-          <Styles.UnderLinkBar mainColor={resultMainColor} />
-        </Styles.TestReviewTitle>
-        <Styles.TestReviewContentsWrap>
-          <Styles.TestReviewContentWrap>
-            <Styles.TestReviewEmotionWrap onClick={handleClickLikeBtn}>
-              <Styles.TestReviewEmotion>😄</Styles.TestReviewEmotion>
-              <Styles.TestReviewEmotionDescription>잘맞아요</Styles.TestReviewEmotionDescription>
-            </Styles.TestReviewEmotionWrap>
-            <Styles.TestReviewEmotionCount>{resultLikeCount}</Styles.TestReviewEmotionCount>
-          </Styles.TestReviewContentWrap>
-          <Styles.TestReviewContentWrap>
-            <Styles.TestReviewEmotionWrap onClick={handleClickFunBtn}>
-              <Styles.TestReviewEmotion>😋</Styles.TestReviewEmotion>
-              <Styles.TestReviewEmotionDescription>재밌어요</Styles.TestReviewEmotionDescription>
-            </Styles.TestReviewEmotionWrap>
-            <Styles.TestReviewEmotionCount>{resultFunCount}</Styles.TestReviewEmotionCount>
-          </Styles.TestReviewContentWrap>
-          <Styles.TestReviewContentWrap>
-            <Styles.TestReviewEmotionWrap onClick={handleClickBadBtn}>
-              <Styles.TestReviewEmotion>😅</Styles.TestReviewEmotion>
-              <Styles.TestReviewEmotionDescription>아쉬워요</Styles.TestReviewEmotionDescription>
-            </Styles.TestReviewEmotionWrap>
-            <Styles.TestReviewEmotionCount>{resultBadCount}</Styles.TestReviewEmotionCount>
-          </Styles.TestReviewContentWrap>
-          <Styles.TestReviewContentWrap>
-            <Styles.TestReviewEmotionWrap onClick={handleClickExpectBtn}>
-              <Styles.TestReviewEmotion>😍</Styles.TestReviewEmotion>
-              <Styles.TestReviewEmotionDescription>후속작GO!</Styles.TestReviewEmotionDescription>
-            </Styles.TestReviewEmotionWrap>
-            <Styles.TestReviewEmotionCount>{resultExpectCount}</Styles.TestReviewEmotionCount>
-          </Styles.TestReviewContentWrap>
-        </Styles.TestReviewContentsWrap>
-      </Styles.TestReviewWrap>
-      <Styles.ResultCreatorWrap>
-        <Styles.ResultCreatorTitle>
-          만든이
-          <Styles.UnderLinkBar mainColor={resultMainColor} />
-        </Styles.ResultCreatorTitle>
-        <Styles.ResultCreatorImage src={creatorLogo} />
-        <Styles.ResultCreatorHashtag>
-          #너하고싶은거다해 #도전공간 #리플레이스
-        </Styles.ResultCreatorHashtag>
-        <Styles.ResultCreatorSubTitle mainColor={resultMainColor}>
-          우리가 하고싶은 일을 합니다.
-        </Styles.ResultCreatorSubTitle>
-        <Styles.ResultCreatorDescription>
-          나를 열정적으로 만드는 것을 콘텐츠로 제작합니다. 재밌는 실험을 많이 할 예정이니
-          기대해주세요!
-        </Styles.ResultCreatorDescription>
-        <Styles.ResultCreatorLinkBtn mainColor={resultMainColor} onClick={handleCreatorLinkBtn}>
-          2022.replace
-        </Styles.ResultCreatorLinkBtn>
-      </Styles.ResultCreatorWrap>
-      <Styles.ResultRetryBtn onClick={handleAnotherTestBtn}>
-        다른 심리테스트 해보기
-      </Styles.ResultRetryBtn>
-      <Styles.ResultRetryBtn onClick={handleRetryBtn}>테스트 다시 하기</Styles.ResultRetryBtn>
+      <Styles.ResultWrap>
+        <Styles.DescriptionWrap>
+          <Styles.ResultPercentage mainColor={resultMainColor}>
+            나와 비슷한 유형의 사람이&nbsp;<span>{resultPercent}%</span>&nbsp;있어요.
+          </Styles.ResultPercentage>
+          <Styles.ResultFontTitle mainColor={resultMainColor}>
+            {resultFontCharacter}
+          </Styles.ResultFontTitle>
+          <Radar data={radarData} />
+          <Styles.ResultTagWrap>
+            {resultTag.map((e) => (
+              <Styles.ResultTag mainColor={resultMainColor}>{e}</Styles.ResultTag>
+            ))}
+          </Styles.ResultTagWrap>
+          <Styles.ResultCharaterWap>
+            <Styles.ResultCharaterTitle>{resultFontTitle}</Styles.ResultCharaterTitle>
+            <Styles.ResultCharater>{resultFontDescription}</Styles.ResultCharater>
+          </Styles.ResultCharaterWap>
+          <Styles.ResultDivider mainColor={resultMainColor} />
+          <Styles.ResultLetterWrap>
+            <Styles.ResultLetterTitle>{resultLetterTitle}</Styles.ResultLetterTitle>
+            <Styles.ResultLetter bgImage={resultLetterImage}>{resultLetter}</Styles.ResultLetter>
+          </Styles.ResultLetterWrap>
+        </Styles.DescriptionWrap>
+        <KakaoAdfit />
+        <Styles.ResultShareWrap>
+          <Styles.ResultShareTitle>
+            [내 결과 공유하기]
+            {/* <Styles.UnderLinkBar mainColor={resultMainColor} /> */}
+          </Styles.ResultShareTitle>
+          <Styles.ResultShareLinkWrap>
+            <KakaoShareButton />
+            {/* <Styles.ResultShareKakao></Styles.ResultShareKakao> */}
+            <Styles.ResultShareLink
+              src={shareLinkLogo}
+              onClick={() => handleShareLink(window.location.href)}
+            ></Styles.ResultShareLink>
+          </Styles.ResultShareLinkWrap>
+        </Styles.ResultShareWrap>
+        <Styles.ResultMatchWrap>
+          <Styles.ResultMatchTitle>[ 글씨 별 많은 유형 순위 ]</Styles.ResultMatchTitle>
+          <Styles.FontRankWrap>
+            <Styles.FontRank>
+              <Styles.FontRankLeft mainColor={resultMainColor}>🌟 1위 🌟</Styles.FontRankLeft>
+              <Styles.FontRankRight>{resultRank1st}</Styles.FontRankRight>
+            </Styles.FontRank>
+            <Styles.FontRank>
+              <Styles.FontRankLeft mainColor={resultMainColor}>⭐️ 2위 ⭐️</Styles.FontRankLeft>
+              <Styles.FontRankRight>{resultRank2nd}</Styles.FontRankRight>
+            </Styles.FontRank>
+            <Styles.FontRank>
+              <Styles.FontRankLeft mainColor={resultMainColor}>✨ 3위 ✨</Styles.FontRankLeft>
+              <Styles.FontRankRight>{resultRank3rd}</Styles.FontRankRight>
+            </Styles.FontRank>
+          </Styles.FontRankWrap>
+        </Styles.ResultMatchWrap>
+        <Styles.TestReviewWrap>
+          <Styles.TestReviewTitle>[테스트 평가하기]</Styles.TestReviewTitle>
+          <Styles.TestReviewContentsWrap>
+            <Styles.TestReviewContentWrap>
+              <Styles.TestReviewEmotionWrap onClick={handleClickLikeBtn}>
+                <Styles.TestReviewEmotion>💓</Styles.TestReviewEmotion>
+                <Styles.TestReviewEmotionDescription>잘맞아요</Styles.TestReviewEmotionDescription>
+              </Styles.TestReviewEmotionWrap>
+              <Styles.TestReviewEmotionCount>{resultLikeCount}</Styles.TestReviewEmotionCount>
+            </Styles.TestReviewContentWrap>
+            <Styles.TestReviewContentWrap>
+              <Styles.TestReviewEmotionWrap onClick={handleClickFunBtn}>
+                <Styles.TestReviewEmotion>🔮</Styles.TestReviewEmotion>
+                <Styles.TestReviewEmotionDescription>재밌어요</Styles.TestReviewEmotionDescription>
+              </Styles.TestReviewEmotionWrap>
+              <Styles.TestReviewEmotionCount>{resultFunCount}</Styles.TestReviewEmotionCount>
+            </Styles.TestReviewContentWrap>
+            <Styles.TestReviewContentWrap>
+              <Styles.TestReviewEmotionWrap onClick={handleClickBadBtn}>
+                <Styles.TestReviewEmotion>🥀</Styles.TestReviewEmotion>
+                <Styles.TestReviewEmotionDescription>아쉬워요</Styles.TestReviewEmotionDescription>
+              </Styles.TestReviewEmotionWrap>
+              <Styles.TestReviewEmotionCount>{resultBadCount}</Styles.TestReviewEmotionCount>
+            </Styles.TestReviewContentWrap>
+            <Styles.TestReviewContentWrap>
+              <Styles.TestReviewEmotionWrap onClick={handleClickExpectBtn}>
+                <Styles.TestReviewEmotion>🌟</Styles.TestReviewEmotion>
+                <Styles.TestReviewEmotionDescription>후속작GO!</Styles.TestReviewEmotionDescription>
+              </Styles.TestReviewEmotionWrap>
+              <Styles.TestReviewEmotionCount>{resultExpectCount}</Styles.TestReviewEmotionCount>
+            </Styles.TestReviewContentWrap>
+          </Styles.TestReviewContentsWrap>
+        </Styles.TestReviewWrap>
+        <Styles.ResultCreatorWrap>
+          <Styles.ResultCreatorTitle>[만든이]</Styles.ResultCreatorTitle>
+          <Styles.ResultCreatorImage src={creatorLogo} />
+          <Styles.ResultCreatorHashtag>
+            #너하고싶은거다해 #도전공간 #리플레이스
+          </Styles.ResultCreatorHashtag>
+          <Styles.ResultCreatorSubTitle mainColor={resultMainColor}>
+            우리가 하고싶은 일을 합니다.
+          </Styles.ResultCreatorSubTitle>
+          <Styles.ResultCreatorDescription>
+            나를 열정적으로 만드는 것을 콘텐츠로 제작합니다. 재밌는 실험을 많이 할 예정이니
+            기대해주세요!
+          </Styles.ResultCreatorDescription>
+          <Styles.ResultCreatorLinkBtn mainColor={resultMainColor} onClick={handleCreatorLinkBtn}>
+            2022.replace
+          </Styles.ResultCreatorLinkBtn>
+        </Styles.ResultCreatorWrap>
+        <Styles.ResultRetryBtn onClick={handleAnotherTestBtn}>
+          다른 심리테스트 해보기
+        </Styles.ResultRetryBtn>
+        <Styles.ResultRetryBtn onClick={handleRetryBtn}>테스트 다시 하기</Styles.ResultRetryBtn>
+      </Styles.ResultWrap>
       {/* <KakaoAdfit /> */}
     </Styles.ResultFormWrap>
   );

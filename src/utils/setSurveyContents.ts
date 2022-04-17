@@ -2,14 +2,18 @@ export const setSurveyContents = (
   surveyNo: number,
   winnerOnBattle: string[]
 ): [string, string, string, string, string, string] => {
-  let description;
-  let topOptionFont;
-  let bottomOptionFont;
-  let descriptionImage;
-  let titleBgColor;
-  let bottomImg;
+  let description = '';
+  let topOptionFont = '';
+  let bottomOptionFont = '';
+  let descriptionImage = '';
+  let titleBgColor = '';
+  let bottomImg = '';
 
-  if (surveyNo === 1) {
+  if (surveyNo === 0) {
+    description = '16강';
+    // topOptionFont = '/images/font_type_1.png';
+    // bottomOptionFont = '/images/font_type_2.png';
+  } else if (surveyNo === 1) {
     // 16 (1/8)
     description = '16강 1/8';
     topOptionFont = '/images/font_type_1.png';
@@ -43,32 +47,38 @@ export const setSurveyContents = (
     topOptionFont = '/images/font_type_15.png';
     bottomOptionFont = '/images/font_type_16.png';
   } else if (surveyNo === 9) {
+    description = '8강';
+  } else if (surveyNo === 10) {
     // 8강 1/4
     description = '8강 1/4';
     topOptionFont = winnerOnBattle[0];
     bottomOptionFont = winnerOnBattle[1];
-  } else if (surveyNo === 10) {
+  } else if (surveyNo === 11) {
     description = '8강 2/4';
     topOptionFont = winnerOnBattle[2];
     bottomOptionFont = winnerOnBattle[3];
-  } else if (surveyNo === 11) {
+  } else if (surveyNo === 12) {
     description = '8강 3/4';
     topOptionFont = winnerOnBattle[4];
     bottomOptionFont = winnerOnBattle[5];
-  } else if (surveyNo === 12) {
+  } else if (surveyNo === 13) {
     description = '8강 4/4';
     topOptionFont = winnerOnBattle[6];
     bottomOptionFont = winnerOnBattle[7];
-  } else if (surveyNo === 13) {
+  } else if (surveyNo === 14) {
+    description = '4강';
+  } else if (surveyNo === 15) {
     // 4강 1/2
     description = '4강 1/2';
     topOptionFont = winnerOnBattle[8];
     bottomOptionFont = winnerOnBattle[9];
-  } else if (surveyNo === 14) {
+  } else if (surveyNo === 16) {
     // 4강 2/2
     description = '4강 2/2';
     topOptionFont = winnerOnBattle[10];
     bottomOptionFont = winnerOnBattle[11];
+  } else if (surveyNo === 17) {
+    description = '결승';
   } else {
     // 결승 1/2
     description = '결승';
@@ -81,11 +91,11 @@ export const setSurveyContents = (
     titleBgColor = '#F5FFE4';
     descriptionImage = '/images/descriptionImg_16.png';
     bottomImg = '/images/bottomImg_16.png';
-  } else if (surveyNo <= 12) {
+  } else if (surveyNo <= 13) {
     titleBgColor = '#FFEAF1';
     descriptionImage = '/images/descriptionImg_8.png';
     bottomImg = '/images/bottomImg_8.png';
-  } else if (surveyNo <= 14) {
+  } else if (surveyNo <= 16) {
     titleBgColor = '#EAF2F7';
     descriptionImage = '/images/descriptionImg_4.png';
     bottomImg = '/images/bottomImg_4.png';

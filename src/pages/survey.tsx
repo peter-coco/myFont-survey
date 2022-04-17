@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Loading from '../components/loading';
-import { setResultOnSurvey } from '../utils/setResultOnSurvey';
 import { firebaseDB } from '../config/firebase';
 import * as Styles from '../components/surveyForm/index.style';
 import ReactAudioPlayer from 'react-audio-player';
@@ -19,9 +18,14 @@ const Survey = () => {
   const soundTrack = '/sound/survey_sound.m4a';
 
   const [loadingStateToResult, setLoadingStateToResult] = useState(false);
+
   const [timer, setTimer] = useState(2);
   const [timerButton, setTimerButton] = useState(false);
-  const [surveyNo, setSurveyNo] = useState(1);
+
+  const [introduceTimer, setIntroduceTimer] = useState(2);
+  const [introduceTimerButton, setIntroduceTimerButton] = useState(false);
+  const [surveyNo, setSurveyNo] = useState(0);
+
   const [winner, setWinner] = useState('');
 
   const [descriptionImage, setDescriptionImage] = useState('');
@@ -34,7 +38,7 @@ const Survey = () => {
 
   const handleNextSurvey = useCallback(
     (winner: string) => {
-      if (surveyNo < 15) {
+      if (surveyNo < 18) {
         setSurveyNo((pre) => pre + 1);
         return;
       }
@@ -158,6 +162,11 @@ const Survey = () => {
     setDescriptionImage(descriptionImage);
     setTitleBgColor(titleBgColor);
     setBottomImg(bottomImg);
+
+    if (surveyNo === 0 || surveyNo === 9 || surveyNo === 14 || surveyNo === 16) {
+      setIntroduceTimerButton(true);
+      setIntroduceTimer(2);
+    }
   }, [surveyNo]);
 
   useEffect(() => {
@@ -176,6 +185,24 @@ const Survey = () => {
     }
   }, [timerButton, timer]);
 
+  useEffect(() => {
+    if (introduceTimerButton) {
+      const countdown = setInterval(() => {
+        if (introduceTimer > 0) {
+          setIntroduceTimer((pre) => pre - 1);
+        } else {
+          handleNextSurvey('');
+          setIntroduceTimerButton(false);
+          setIntroduceTimer(2);
+
+          // setLoadingStateToResult(false);
+          return;
+        }
+      }, 1000);
+      return () => clearInterval(countdown);
+    }
+  }, [introduceTimerButton, introduceTimer]);
+
   return (
     <SurveyWrap>
       <Paper />
@@ -183,25 +210,35 @@ const Survey = () => {
         <Loading />
       ) : (
         <Styles.SurveyFormWrap>
-          {/* <ReactAudioPlayer src={soundTrack} autoPlay controls={false} loop={true} volume={0.05} /> */}
-          <Styles.Top>
-            <Styles.SurveyDescriptionImage src={descriptionImage} />
-            <Styles.SurveyDescription bgColor={titleBgColor}>
-              {description}
-            </Styles.SurveyDescription>
-            <Styles.SurveyDescriptionImage src={descriptionImage} mirror={true} />
-          </Styles.Top>
-          <Styles.SurveyOptionWrap>
-            <Styles.SurveyOption src={topOptionFont} onClick={handleTopOption} />
-            <Styles.SurveyOption src={bottomOptionFont} onClick={handleBottomOption} />
-          </Styles.SurveyOptionWrap>
-          <Styles.Bottom>
-            <Styles.BottomDescription>
-              좋아하는 글씨체는 내가 닮고 싶은 성격을 <br />
-              나와 닮은 글씨체는 내 성격을 나타냅니다.
-            </Styles.BottomDescription>
-            <Styles.BottomImage src={bottomImg} />
-          </Styles.Bottom>
+          {surveyNo === 0 || surveyNo === 9 || surveyNo === 14 || surveyNo === 17 ? (
+            <Styles.Introduce>
+              <Styles.SurveyDescriptionIntroduceImage src={descriptionImage} />
+              <Styles.SurveyDescriptionIntroduce bgColor={titleBgColor}>
+                {description}
+              </Styles.SurveyDescriptionIntroduce>
+            </Styles.Introduce>
+          ) : (
+            <>
+              <Styles.Top>
+                <Styles.SurveyDescriptionImage src={descriptionImage} />
+                <Styles.SurveyDescription bgColor={titleBgColor}>
+                  {description}
+                </Styles.SurveyDescription>
+                <Styles.SurveyDescriptionImage src={descriptionImage} mirror={true} />
+              </Styles.Top>
+              <Styles.SurveyOptionWrap>
+                <Styles.SurveyOption src={topOptionFont} onClick={handleTopOption} />
+                <Styles.SurveyOption src={bottomOptionFont} onClick={handleBottomOption} />
+              </Styles.SurveyOptionWrap>
+              <Styles.Bottom>
+                <Styles.BottomDescription>
+                  좋아하는 글씨체는 내가 닮고 싶은 성격을 <br />
+                  나와 닮은 글씨체는 내 성격을 나타냅니다.
+                </Styles.BottomDescription>
+                <Styles.BottomImage src={bottomImg} />
+              </Styles.Bottom>
+            </>
+          )}
         </Styles.SurveyFormWrap>
       )}
     </SurveyWrap>

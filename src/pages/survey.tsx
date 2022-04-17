@@ -163,7 +163,7 @@ const Survey = () => {
     setTitleBgColor(titleBgColor);
     setBottomImg(bottomImg);
 
-    if (surveyNo === 0 || surveyNo === 9 || surveyNo === 14 || surveyNo === 16) {
+    if (surveyNo === 0 || surveyNo === 9 || surveyNo === 14 || surveyNo === 17) {
       setIntroduceTimerButton(true);
       setIntroduceTimer(2);
     }

@@ -116,8 +116,9 @@ export const Bottom = styled.div`
 `;
 export const BottomDescription = styled.div`
   font-family: '나눔손글씨 가람연꽃';
-  -webkit-text-stroke: 0.3px #ffedb6;
-  font-size: 17px;
+  /* -webkit-text-stroke: 0.3px #ffedb6; */
+  font-size: 15px;
+  font-weight: 400;
   text-align: center;
   position: relative;
   top: -20px;

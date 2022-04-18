@@ -174,7 +174,7 @@ const ResultType = ({ type = 'font_type_1' }: { type?: string }) => {
   };
 
   const handleAnotherTestBtn = () => {
-    window.location.href = 'https://jaksimsamil-survey.netlify.app';
+    window.location.href = 'https://my-animal-type-survey.netlify.app';
   };
 
   const handleResultContent = useCallback((resultContent: ResultContent) => {

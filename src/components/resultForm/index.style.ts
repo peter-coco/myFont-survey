@@ -41,9 +41,11 @@ export const ResultTag = styled.div<{ mainColor: string }>`
   box-sizing: border-box;
   background-color: ${(props) => props.mainColor};
   border-radius: 10px;
-  font-size: 13px;
+  font-size: 11px;
   font-family: '나눔손글씨 가람연꽃';
-  font-weight: 700;
+  /* color: #ffffff; */
+  /* -webkit-text-stroke: 0.01px #ffffff; */
+  font-weight: 900;
 `;
 export const ResultCharaterWap = styled.div``;
 export const ResultCharaterTitle = styled.div`

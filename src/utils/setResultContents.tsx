@@ -91,7 +91,7 @@ export const setResultContents = (type: string): ResultContent => {
             },
           ],
         },
-        resultTag: ['✏️자립심', '✏️손해안봄', '✏️원칙중시'],
+        resultTag: ['✏️ 자립심', '✏️ 손해안봄', '✏️ 원칙중시'],
       };
     case 'font_type_2':
       return {
@@ -183,7 +183,7 @@ export const setResultContents = (type: string): ResultContent => {
             },
           ],
         },
-        resultTag: ['✏️자립심', '✏️손해안봄', '✏️원칙중시'],
+        resultTag: ['✏️ 자립심', '✏️ 손해안봄', '✏️ 원칙중시'],
       };
     case 'font_type_3':
       return {
@@ -276,7 +276,7 @@ export const setResultContents = (type: string): ResultContent => {
             },
           ],
         },
-        resultTag: ['✏️자립심', '✏️손해안봄', '✏️원칙중시'],
+        resultTag: ['✏️ 자립심', '✏️ 손해안봄', '✏️ 원칙중시'],
       };
     case 'font_type_4':
       return {
@@ -369,7 +369,7 @@ export const setResultContents = (type: string): ResultContent => {
             },
           ],
         },
-        resultTag: ['✏️자립심', '✏️손해안봄', '✏️원칙중시'],
+        resultTag: ['✏️ 자립심', '✏️ 손해안봄', '✏️ 원칙중시'],
       };
     case 'font_type_5':
       return {
@@ -462,7 +462,7 @@ export const setResultContents = (type: string): ResultContent => {
             },
           ],
         },
-        resultTag: ['✏️자립심', '✏️손해안봄', '✏️원칙중시'],
+        resultTag: ['✏️ 자립심', '✏️ 손해안봄', '✏️ 원칙중시'],
       };
     case 'font_type_6':
       return {
@@ -554,7 +554,7 @@ export const setResultContents = (type: string): ResultContent => {
             },
           ],
         },
-        resultTag: ['✏️자립심', '✏️손해안봄', '✏️원칙중시'],
+        resultTag: ['✏️ 자립심', '✏️ 손해안봄', '✏️ 원칙중시'],
       };
     case 'font_type_7':
       return {
@@ -647,7 +647,7 @@ export const setResultContents = (type: string): ResultContent => {
             },
           ],
         },
-        resultTag: ['✏️자립심', '✏️손해안봄', '✏️원칙중시'],
+        resultTag: ['✏️ 자립심', '✏️ 손해안봄', '✏️ 원칙중시'],
       };
     case 'font_type_8':
       return {
@@ -740,7 +740,7 @@ export const setResultContents = (type: string): ResultContent => {
             },
           ],
         },
-        resultTag: ['✏️자립심', '✏️손해안봄', '✏️원칙중시'],
+        resultTag: ['✏️ 자립심', '✏️ 손해안봄', '✏️ 원칙중시'],
       };
     case 'font_type_9':
       return {
@@ -833,7 +833,7 @@ export const setResultContents = (type: string): ResultContent => {
             },
           ],
         },
-        resultTag: ['✏️자립심', '✏️손해안봄', '✏️원칙중시'],
+        resultTag: ['✏️ 자립심', '✏️ 손해안봄', '✏️ 원칙중시'],
       };
     case 'font_type_10':
       return {
@@ -926,7 +926,7 @@ export const setResultContents = (type: string): ResultContent => {
             },
           ],
         },
-        resultTag: ['✏️자립심', '✏️손해안봄', '✏️원칙중시'],
+        resultTag: ['✏️ 자립심', '✏️ 손해안봄', '✏️ 원칙중시'],
       };
     case 'font_type_11':
       return {
@@ -1019,7 +1019,7 @@ export const setResultContents = (type: string): ResultContent => {
             },
           ],
         },
-        resultTag: ['✏️자립심', '✏️손해안봄', '✏️원칙중시'],
+        resultTag: ['✏️ 자립심', '✏️ 손해안봄', '✏️ 원칙중시'],
       };
     case 'font_type_12':
       return {
@@ -1112,7 +1112,7 @@ export const setResultContents = (type: string): ResultContent => {
             },
           ],
         },
-        resultTag: ['✏️자립심', '✏️손해안봄', '✏️원칙중시'],
+        resultTag: ['✏️ 자립심', '✏️ 손해안봄', '✏️ 원칙중시'],
       };
     case 'font_type_13':
       return {
@@ -1205,7 +1205,7 @@ export const setResultContents = (type: string): ResultContent => {
             },
           ],
         },
-        resultTag: ['✏️자립심', '✏️손해안봄', '✏️원칙중시'],
+        resultTag: ['✏️ 자립심', '✏️ 손해안봄', '✏️ 원칙중시'],
       };
     case 'font_type_14':
       return {
@@ -1298,7 +1298,7 @@ export const setResultContents = (type: string): ResultContent => {
             },
           ],
         },
-        resultTag: ['✏️자립심', '✏️손해안봄', '✏️원칙중시'],
+        resultTag: ['✏️ 자립심', '✏️ 손해안봄', '✏️ 원칙중시'],
       };
     case 'font_type_15':
       return {
@@ -1391,7 +1391,7 @@ export const setResultContents = (type: string): ResultContent => {
             },
           ],
         },
-        resultTag: ['✏️자립심', '✏️손해안봄', '✏️원칙중시'],
+        resultTag: ['✏️ 자립심', '✏️ 손해안봄', '✏️ 원칙중시'],
       };
     case 'font_type_16':
       return {
@@ -1484,7 +1484,7 @@ export const setResultContents = (type: string): ResultContent => {
             },
           ],
         },
-        resultTag: ['✏️자립심', '✏️손해안봄', '✏️원칙중시'],
+        resultTag: ['✏️ 자립심', '✏️ 손해안봄', '✏️ 원칙중시'],
       };
     default:
       return {
@@ -1577,7 +1577,7 @@ export const setResultContents = (type: string): ResultContent => {
             },
           ],
         },
-        resultTag: ['✏️자립심', '✏️손해안봄', '✏️원칙중시'],
+        resultTag: ['✏️ 자립심', '✏️ 손해안봄', '✏️ 원칙중시'],
       };
   }
 };

@@ -52,21 +52,21 @@ const TitleLeftTop = styled.img`
   height: 73px;
   position: absolute;
   top: 0;
-  left: 15%;
+  left: 12%;
 `;
 const TitleRightTop = styled.img`
   width: 60px;
   height: 57px;
   position: absolute;
   top: 0;
-  right: 20%;
+  right: 16%;
 `;
 const TitleRightBottom = styled.img`
   width: 73px;
   height: 81px;
   position: absolute;
-  bottom: 8%;
-  right: 8%;
+  bottom: 5%;
+  right: 5%;
 `;
 
 const ShapesWrap = styled.div``;

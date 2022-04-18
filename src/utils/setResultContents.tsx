@@ -45,7 +45,7 @@ export const setResultContents = (type: string): ResultContent => {
             <br /> 만인의 사랑을 받는 사람입니다.
           </div>
         ),
-        letterTitle: '✏️ ️당신을 위한 한마디 ️📘',
+        letterTitle: '당신을 위한 한마디',
         letter: (
           <div>
             너의 믿음은 너의 생각이 된다.
@@ -137,7 +137,7 @@ export const setResultContents = (type: string): ResultContent => {
             <br /> 만인의 사랑을 받는 사람입니다.
           </div>
         ),
-        letterTitle: '✏️ ️당신을 위한 한마디 ️📘',
+        letterTitle: '당신을 위한 한마디',
         letter: (
           <div>
             너의 믿음은 너의 생각이 된다.
@@ -230,7 +230,7 @@ export const setResultContents = (type: string): ResultContent => {
             <br /> 만인의 사랑을 받는 사람입니다.
           </div>
         ),
-        letterTitle: '✏️ ️당신을 위한 한마디 ️📘',
+        letterTitle: '당신을 위한 한마디',
         letter: (
           <div>
             너의 믿음은 너의 생각이 된다.
@@ -323,7 +323,7 @@ export const setResultContents = (type: string): ResultContent => {
             <br /> 만인의 사랑을 받는 사람입니다.
           </div>
         ),
-        letterTitle: '✏️ ️당신을 위한 한마디 ️📘',
+        letterTitle: '당신을 위한 한마디',
         letter: (
           <div>
             너의 믿음은 너의 생각이 된다.
@@ -416,7 +416,7 @@ export const setResultContents = (type: string): ResultContent => {
             <br /> 만인의 사랑을 받는 사람입니다.
           </div>
         ),
-        letterTitle: '✏️ ️당신을 위한 한마디 ️📘',
+        letterTitle: '당신을 위한 한마디',
         letter: (
           <div>
             너의 믿음은 너의 생각이 된다.
@@ -508,7 +508,7 @@ export const setResultContents = (type: string): ResultContent => {
             <br /> 만인의 사랑을 받는 사람입니다.
           </div>
         ),
-        letterTitle: '✏️ ️당신을 위한 한마디 ️📘',
+        letterTitle: '당신을 위한 한마디',
         letter: (
           <div>
             너의 믿음은 너의 생각이 된다.
@@ -601,7 +601,7 @@ export const setResultContents = (type: string): ResultContent => {
             <br /> 만인의 사랑을 받는 사람입니다.
           </div>
         ),
-        letterTitle: '✏️ ️당신을 위한 한마디 ️📘',
+        letterTitle: '당신을 위한 한마디',
         letter: (
           <div>
             너의 믿음은 너의 생각이 된다.
@@ -694,7 +694,7 @@ export const setResultContents = (type: string): ResultContent => {
             <br /> 만인의 사랑을 받는 사람입니다.
           </div>
         ),
-        letterTitle: '✏️ ️당신을 위한 한마디 ️📘',
+        letterTitle: '당신을 위한 한마디',
         letter: (
           <div>
             너의 믿음은 너의 생각이 된다.
@@ -787,7 +787,7 @@ export const setResultContents = (type: string): ResultContent => {
             <br /> 만인의 사랑을 받는 사람입니다.
           </div>
         ),
-        letterTitle: '✏️ ️당신을 위한 한마디 ️📘',
+        letterTitle: '당신을 위한 한마디',
         letter: (
           <div>
             너의 믿음은 너의 생각이 된다.
@@ -880,7 +880,7 @@ export const setResultContents = (type: string): ResultContent => {
             <br /> 만인의 사랑을 받는 사람입니다.
           </div>
         ),
-        letterTitle: '✏️ ️당신을 위한 한마디 ️📘',
+        letterTitle: '당신을 위한 한마디',
         letter: (
           <div>
             너의 믿음은 너의 생각이 된다.
@@ -973,7 +973,7 @@ export const setResultContents = (type: string): ResultContent => {
             <br /> 만인의 사랑을 받는 사람입니다.
           </div>
         ),
-        letterTitle: '✏️ ️당신을 위한 한마디 ️📘',
+        letterTitle: '당신을 위한 한마디',
         letter: (
           <div>
             너의 믿음은 너의 생각이 된다.
@@ -1066,7 +1066,7 @@ export const setResultContents = (type: string): ResultContent => {
             <br /> 만인의 사랑을 받는 사람입니다.
           </div>
         ),
-        letterTitle: '✏️ ️당신을 위한 한마디 ️📘',
+        letterTitle: '당신을 위한 한마디',
         letter: (
           <div>
             너의 믿음은 너의 생각이 된다.
@@ -1159,7 +1159,7 @@ export const setResultContents = (type: string): ResultContent => {
             <br /> 만인의 사랑을 받는 사람입니다.
           </div>
         ),
-        letterTitle: '✏️ ️당신을 위한 한마디 ️📘',
+        letterTitle: '당신을 위한 한마디',
         letter: (
           <div>
             너의 믿음은 너의 생각이 된다.
@@ -1252,7 +1252,7 @@ export const setResultContents = (type: string): ResultContent => {
             <br /> 만인의 사랑을 받는 사람입니다.
           </div>
         ),
-        letterTitle: '✏️ ️당신을 위한 한마디 ️📘',
+        letterTitle: '당신을 위한 한마디',
         letter: (
           <div>
             너의 믿음은 너의 생각이 된다.
@@ -1345,7 +1345,7 @@ export const setResultContents = (type: string): ResultContent => {
             <br /> 만인의 사랑을 받는 사람입니다.
           </div>
         ),
-        letterTitle: '✏️ ️당신을 위한 한마디 ️📘',
+        letterTitle: '당신을 위한 한마디',
         letter: (
           <div>
             너의 믿음은 너의 생각이 된다.
@@ -1438,7 +1438,7 @@ export const setResultContents = (type: string): ResultContent => {
             <br /> 만인의 사랑을 받는 사람입니다.
           </div>
         ),
-        letterTitle: '✏️ ️당신을 위한 한마디 ️📘',
+        letterTitle: '당신을 위한 한마디',
         letter: (
           <div>
             너의 믿음은 너의 생각이 된다.
@@ -1531,7 +1531,7 @@ export const setResultContents = (type: string): ResultContent => {
             <br /> 만인의 사랑을 받는 사람입니다.
           </div>
         ),
-        letterTitle: '✏️ ️당신을 위한 한마디 ️📘',
+        letterTitle: '당신을 위한 한마디',
         letter: (
           <div>
             너의 믿음은 너의 생각이 된다.

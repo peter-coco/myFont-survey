@@ -64,8 +64,9 @@ export const ResultCharaterTitle = styled.div`
 `;
 export const ResultCharater = styled.div`
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 700;
   text-align: center;
+  font-family: '나눔손글씨 가람연꽃';
 `;
 export const ResultDivider = styled.div<{ mainColor: string }>`
   width: 80%;
@@ -124,17 +125,18 @@ export const ResultLetterWrap = styled.div`
   gap: 10px;
   align-items: center;
 `;
-export const ResultLetterTitle = styled.div<{ mainColor?: string }>`
-  width: 251px;
-  height: 38px;
-  padding: 5px 5px;
+export const ResultLetterTitle = styled.div`
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 30px;
-  font-family: 'Jua';
-  background-color: ${(props) => props.mainColor};
+  gap: 5px;
+  font-family: '나눔손글씨 가람연꽃';
+  font-size: 14px;
+  font-weight: 700;
+  & > div {
+    text-decoration: underline;
+  }
 `;
 export const ResultLetter = styled.div<{ bgImage: string }>`
   background-image: url(${(props) => props.bgImage});

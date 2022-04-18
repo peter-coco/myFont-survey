@@ -308,7 +308,11 @@ const ResultType = ({ type = 'font_type_1' }: { type?: string }) => {
           </Styles.ResultCharaterWap>
           <Styles.ResultDivider mainColor={resultMainColor} />
           <Styles.ResultLetterWrap>
-            <Styles.ResultLetterTitle>{resultLetterTitle}</Styles.ResultLetterTitle>
+            <Styles.ResultLetterTitle>
+              <span>✏️</span>
+              <div>{resultLetterTitle}</div>
+              <span>📘</span>
+            </Styles.ResultLetterTitle>
             <Styles.ResultLetter bgImage={resultLetterImage}>{resultLetter}</Styles.ResultLetter>
           </Styles.ResultLetterWrap>
         </Styles.DescriptionWrap>

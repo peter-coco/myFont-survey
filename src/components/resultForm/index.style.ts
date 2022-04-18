@@ -5,6 +5,7 @@ export const ResultFormWrap = styled.div`
   height: 100%;
 
   position: relative;
+  background-color: #f4f4f4;
 `;
 
 export const DescriptionWrap = styled.div`
@@ -18,6 +19,7 @@ export const DescriptionWrap = styled.div`
   justify-content: center;
   border: 1px solid #c4c4c4;
   border-radius: 30px;
+  background-color: #ffffff;
 `;
 export const ResultWrap = styled.div`
   width: 100%;
@@ -27,9 +29,6 @@ export const ResultWrap = styled.div`
   gap: 30px;
   padding: 10px 10px;
   box-sizing: border-box;
-  position: absolute;
-  z-index: 1px;
-  top: 0px;
 `;
 export const ResultTagWrap = styled.div`
   display: flex;
@@ -173,6 +172,7 @@ export const ResultShareWrap = styled.div`
   border: 1px solid #c4c4c4;
   border-radius: 30px;
   gap: 10px;
+  background-color: #ffffff;
 `;
 export const ResultShareTitle = styled.div`
   font-weight: 600;
@@ -205,6 +205,7 @@ export const ResultMatchWrap = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: #ffffff;
 `;
 export const ResultMatchTitle = styled.div`
   font-weight: 600;
@@ -297,6 +298,7 @@ export const ResultCreatorWrap = styled.div`
   justify-content: center;
   border: 1px solid #c4c4c4;
   border-radius: 30px;
+  background-color: #ffffff;
 `;
 export const ResultCreatorTitle = styled.div`
   font-weight: 600;
@@ -377,6 +379,7 @@ export const TestReviewWrap = styled.div`
   justify-content: center;
   border: 1px solid #c4c4c4;
   border-radius: 30px;
+  background-color: #ffffff;
 `;
 
 export const TestReviewTitle = styled.div`

@@ -23,6 +23,10 @@ const ContentsWrap = styled.div`
   gap: 50px;
   align-items: center;
   justify-content: center;
+  background-image: url('/images/note.png');
+  background-repeat: repeat;
+  background-size: cover;
+  background-position: center;
 `;
 const Title = styled.div`
   font-size: 40px;
@@ -102,7 +106,7 @@ const Home = () => {
   }, []);
   return (
     <HomeWrap>
-      <Paper />
+      {/* <Paper /> */}
       <ContentsWrap>
         <TitleWrap>
           <TitleLeftTop src={homeTopLeft} />

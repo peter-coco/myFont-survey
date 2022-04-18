@@ -331,15 +331,15 @@ const ResultType = ({ type = 'font_type_1' }: { type?: string }) => {
           <Styles.ResultMatchTitle>[ 글씨 별 많은 유형 순위 ]</Styles.ResultMatchTitle>
           <Styles.FontRankWrap>
             <Styles.FontRank>
-              <Styles.FontRankLeft mainColor={resultMainColor}>🌟 1위 🌟</Styles.FontRankLeft>
+              <Styles.FontRankLeft mainColor={resultMainColor}>1위</Styles.FontRankLeft>
               <Styles.FontRankRight>{resultRank1st}</Styles.FontRankRight>
             </Styles.FontRank>
             <Styles.FontRank>
-              <Styles.FontRankLeft mainColor={resultMainColor}>⭐️ 2위 ⭐️</Styles.FontRankLeft>
+              <Styles.FontRankLeft mainColor={resultMainColor}>2위</Styles.FontRankLeft>
               <Styles.FontRankRight>{resultRank2nd}</Styles.FontRankRight>
             </Styles.FontRank>
             <Styles.FontRank>
-              <Styles.FontRankLeft mainColor={resultMainColor}>✨ 3위 ✨</Styles.FontRankLeft>
+              <Styles.FontRankLeft mainColor={resultMainColor}>3위</Styles.FontRankLeft>
               <Styles.FontRankRight>{resultRank3rd}</Styles.FontRankRight>
             </Styles.FontRank>
           </Styles.FontRankWrap>

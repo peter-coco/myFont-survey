@@ -9,6 +9,11 @@ const IntroduceWrap = styled.div`
   max-width: 500px;
   height: 100vh;
   position: relative;
+
+  background-image: url('/images/note.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 `;
 
 const ContentsWrap = styled.div`
@@ -61,7 +66,7 @@ const Introduce = () => {
   const descriptionTopImg = '/images/IntroTitle.png';
   return (
     <IntroduceWrap>
-      <Paper />
+      {/* <Paper /> */}
       <ContentsWrap>
         <Description>
           <DescriptionTopLeftImg src={descriptionTopImg} />

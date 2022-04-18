@@ -12,6 +12,10 @@ const SurveyWrap = styled.div`
   max-width: 400px;
   height: 100vh;
   position: relative;
+  background-image: url('/images/note.png');
+  background-repeat: repeat;
+  background-size: cover;
+  background-position: center;
 `;
 
 const Survey = () => {
@@ -205,7 +209,7 @@ const Survey = () => {
 
   return (
     <SurveyWrap>
-      <Paper />
+      {/* <Paper /> */}
       {loadingStateToResult ? (
         <Loading />
       ) : (

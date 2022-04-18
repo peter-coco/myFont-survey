@@ -36,7 +36,7 @@ export const ResultTagWrap = styled.div`
   justify-content: center;
 `;
 export const ResultTag = styled.div<{ mainColor: string }>`
-  padding: 5px 16px;
+  padding: 5px 8px;
   box-sizing: border-box;
   background-color: ${(props) => props.mainColor};
   border-radius: 10px;

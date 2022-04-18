@@ -33,7 +33,7 @@ const Description = styled.div`
   font-weight: 600;
   font-size: 18px;
   width: 246px;
-  height: 367px;
+  /* height: 367px; */
   display: flex;
   padding: 25px 7px;
   box-sizing: border-box;
